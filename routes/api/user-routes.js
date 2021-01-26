@@ -35,8 +35,7 @@ router.post('/api/register', (req, res) => {
         else {
             const today = new Date()
             const userData = {
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
+                hotel_name: req.body.hotel_name,
                 email: req.body.email,
                 password: req.body.password,
                 created: today
@@ -65,8 +64,7 @@ router.post('/api/login', (req, res) => {
                 if (bcrypt.compareSync(req.body.password, response.password)) {
                     const payload = {
                         _id: response._id,
-                        first_name: response.first_name,
-                        last_name: response.last_name,
+                        hotel_name: response.hotel_name,
                         email: response.email
                     }
                     let token = jwt.sign(payload, process.env.SECRET_KEY, {

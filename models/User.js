@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const UserSchema = new Schema({
-  first_name: {
-    type: String,
-    required: true
-  },
-  last_name: {
+  hotel_name: {
     type: String,
     required: true
   },

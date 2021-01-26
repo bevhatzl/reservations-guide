@@ -8,8 +8,7 @@ class DashBoard extends Component {
     constructor() {
         super()
         this.state = {
-            first_name: '',
-            last_name: '',
+            hotel_name: '',
             email: '',
             password: ''
         }
@@ -19,8 +18,7 @@ class DashBoard extends Component {
         const token = localStorage.usertoken;
         const decoded = jwt_decode(token);
         this.setState({
-            first_name: decoded.first_name,
-            last_name: decoded.last_name,
+            hotel_name: decoded.hotel_name,
             email: decoded.email
         })
     }
@@ -31,7 +29,7 @@ class DashBoard extends Component {
                     <Sidebar />
                     <div>
                         <h1>
-                             Welcome { this.state.first_name } { this.state.last_name }
+                             Welcome { this.state.hotel_name } 
                         </h1>
                         <div className="d-flex flex-row-reverse mr-5">
                             <DasboardNewsCard />

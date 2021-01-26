@@ -5,8 +5,7 @@ class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            first_name: '',
-            last_name: '',
+            hotel_name: '',
             email: '',
             password: '',
             errors: {}
@@ -43,27 +42,16 @@ class Register extends Component {
         }
         else {}
 
-        // firstName
-        if (!this.state.first_name) {
+        // Hotel Name
+        if (!this.state.hotel_name) {
             formIsValid = false;
-            errors["first_name"] = "Cannot be empty";
+            errors["hotel_name"] = "Cannot be empty";
         }
-        else if (typeof this.state.first_name !== "undefined") {
-            if (!this.state.first_name.match(/^[a-zA-Z]+$/)) {
+        else if (typeof this.state.hotel_name !== "undefined") {
+            if (!this.state.hotel_name.match(/^[a-zA-Z" "]+$/)) {
                 formIsValid = false;
-                errors["first_name"] = "Only letters";
+                errors["hotel_name"] = "Only letters";
             }
-        }
-        else {}
-
-        // lastName
-        if (!this.state.last_name) {
-            formIsValid = false;
-            errors["last_name"] = "Cannot be empty";
-        }
-        else if (!this.state.last_name.match(/^[a-zA-Z]+$/)) {
-            formIsValid = false;
-            errors["last_name"] = "Only letters";
         }
         else {}
 
@@ -79,8 +67,7 @@ class Register extends Component {
         let errors = {};
         event.preventDefault();
         const userData = {
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
+            hotel_name: this.state.hotel_name,
             email: this.state.email,
             password: this.state.password
         }
@@ -120,30 +107,18 @@ class Register extends Component {
                 <div className='row'>
                     <div className='col-md-6 mt-5 mx-auto'>
                         <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className='h3 mb-3 font-weight normal'>Please Sign in</h1>
+                            <h1 className='h3 mb-3 font-weight normal'>Please Sign Up</h1>
                             <div className='form-group'>
-                                <label htmlFor='first_name'>First Name</label>
+                                <label htmlFor='hotel_name'>Hotel Name</label>
                                 <input type='text'
-                                    refs='first_name'
+                                    refs='hotel_name'
                                     className='form-control'
-                                    name='first_name'
-                                    placeholder='Enter First Name'
-                                    value={this.state.first_name}
+                                    name='hotel_name'
+                                    placeholder='Enter Hotel Name'
+                                    value={this.state.hotel_name}
                                     onChange={this.onChange}
                                 />
-                                <span style={{ color: "red" }}>{this.state.errors["first_name"]}</span>
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='last_name'>Last Name</label>
-                                <input type='text'
-                                    refs='last_name'
-                                    className='form-control'
-                                    name='last_name'
-                                    placeholder='Enter Last Name'
-                                    value={this.state.last_name}
-                                    onChange={this.onChange}
-                                />
-                                <span style={{ color: "red" }}>{this.state.errors["last_name"]}</span>
+                                <span style={{ color: "red" }}>{this.state.errors["hotel_name"]}</span>
                             </div>
                             <div className='form-group'>
                                 <label htmlFor='email'>Email Address</label>

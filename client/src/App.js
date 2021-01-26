@@ -8,6 +8,7 @@ import Login from "./components/Login/login";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Other from "./components/pages/Other/Other";
 import Profile from "./components/Profile/profile";
+import Footer from "./components/Footer/Footer";
 
 import "./App.css";
 
@@ -29,9 +30,11 @@ class App extends Component {
                             <Route exact path="/dashboard" component={Auth(Dashboard)} />
                             <Route exact path="/other" component={Other} />
                             <Route exact path="/startUp" component={StartUp} />
-                        </div>
+                        </div>                        
                     </div>
+                    <Footer />
                 </Router>
+                
         );
     }
 }
