@@ -5,7 +5,7 @@ const blacklistRoutes = require("./api/blacklist-routes");
 
 // API Routes
 router.use(apiRoutes);
-// router.use(blacklistRoutes);
+router.use(blacklistRoutes);    
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
