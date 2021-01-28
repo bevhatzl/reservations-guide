@@ -1,9 +1,11 @@
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api/user-routes");
+const blacklistRoutes = require("./api/blacklist-routes");
 
 // API Routes
 router.use(apiRoutes);
+// router.use(blacklistRoutes);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {

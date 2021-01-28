@@ -9,6 +9,7 @@ import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Other from "./components/pages/Other/Other";
 import Profile from "./components/Profile/profile";
 import Footer from "./components/Footer/Footer";
+import Addlisting from "./components/pages/Addlisting/Addlisting";
 
 import "./App.css";
 
@@ -28,6 +29,7 @@ class App extends Component {
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/dashboard" component={Auth(Dashboard)} />
+                            <Route exact path="/addlisting" component={Addlisting} />
                             <Route exact path="/other" component={Other} />
                             <Route exact path="/startUp" component={StartUp} />
                         </div>                        

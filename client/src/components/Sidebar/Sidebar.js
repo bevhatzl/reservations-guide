@@ -40,9 +40,9 @@ function Sidebar() {
 
                                 {/* Nav Item - Roster */}
                                 <Item active={''}
-                                        href={"/other"}
+                                        href={"/addlisting"}
                                         icon={<i className="fas fa-calendar-week" />}
-                                        text={<span>Other</span>} />
+                                        text={<span>Add Listing</span>} />
 
                                 {/* Divider */}
                                 <hr className="sidebar-divider d-none d-md-block" />
