@@ -6,9 +6,9 @@ class DasboardPayslipCard extends Component {
         return (
             <div className="dashboardCard card cardBackground">
                 <div className="card-body">
-                    <h4 className="card-subtitle">card</h4>
-                    <p className="card-text">description</p>
-                    <a href="/" className="card-link bottomLink">More details</a>
+                    <h4 className="card-subtitle">Title goes here</h4>
+                    <p className="card-text">Message goes here</p>
+                    {/* <a href="/" className="card-link bottomLink">More details</a> */}
                 </div>
             </div>
         );

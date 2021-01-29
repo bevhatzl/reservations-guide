@@ -1,0 +1,14 @@
+h1 {
+    padding-left: 10%;
+}
+
+#add-bulletin {
+    margin-left: 10%;
+    text-align: end;
+}
+
+#add-entry-form {
+    display: none;
+    margin-left: 40%;
+}
+

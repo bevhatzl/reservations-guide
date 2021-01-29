@@ -9,7 +9,7 @@ class Addlisting extends Component {
         return (
             <div className="container-fluid h-100 p-0 m-0">
                 <Sidebar />
-                <div className="content">
+                <div className="content d-flex">
                     
                     <BlacklistForm />
                    
