@@ -10,7 +10,7 @@ class Addlisting extends Component {
             <div className="container-fluid h-100 p-0 m-0">
                 <Sidebar />
                 <div className="content">
-                    Add blacklisting form goes here
+                    
                     <BlacklistForm />
                    
                 </div>
