@@ -6,9 +6,8 @@ import Landing from "./components/pages/Landing/Landing";
 import Register from "./components/Register/register";
 import Login from "./components/Login/login";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
-import Other from "./components/pages/Other/Other";
-import Profile from "./components/Profile/profile";
-import Footer from "./components/Footer/Footer";
+import Inquiry from "./components/pages/Inquiry/Inquiry";
+// import Profile from "./components/Profile/profile";
 import Addlisting from "./components/pages/Addlisting/Addlisting";
 
 import "./App.css";
@@ -27,14 +26,14 @@ class App extends Component {
                         <div className='container-fluid m-0 p-0'>
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
-                            <Route exact path="/profile" component={Profile} />
+                            {/* <Route exact path="/profile" component={Profile} /> */}
                             <Route exact path="/dashboard" component={Auth(Dashboard)} />
                             <Route exact path="/addlisting" component={Addlisting} />
-                            <Route exact path="/other" component={Other} />
+                            <Route exact path="/inquiry" component={Inquiry} />
                             <Route exact path="/startUp" component={StartUp} />
                         </div>                        
                     </div>
-                    <Footer />
+                    
                 </Router>
                 
         );

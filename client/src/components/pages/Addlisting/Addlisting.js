@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Sidebar from "../../Sidebar/Sidebar";
-import Footer from  "../../Footer/Footer";
 import BlacklistForm from  "../../BlacklistForm/BlacklistForm.js"
 import DasboardNewsCard from "../../DasboardNewsCard/DasboardNewsCard"
 
@@ -13,7 +12,7 @@ class Addlisting extends Component {
                 <div className="content">
                     Add blacklisting form goes here
                     <BlacklistForm />
-                    <Footer />
+                   
                 </div>
                
             </div>

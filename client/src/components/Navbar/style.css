@@ -1,10 +1,10 @@
 .navbar {
-    background-color:#3f0f84;
+    background-color: white;
 }
 
 .btn {
-    background-color: #001f3f !important;
-    color: #FFFFFF !important;
+    background-color: rgb(193, 193, 211) !important;
+    color: black !important;
 }
 
 /* .controlBtn {

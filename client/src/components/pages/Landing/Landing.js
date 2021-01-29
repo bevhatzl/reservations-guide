@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
 import LandingJumbo from "../../LandingJumbo/LandingJumbo";
-import BrandDescription from "../../BrandDescription/BrandDescription"
+import BrandDescription from "../../BrandDescription/BrandDescription";
+import About from "../../About/About";
 
 class Landing extends Component {
     render() {
@@ -11,6 +12,7 @@ class Landing extends Component {
                     <LandingJumbo />
                 </div>     
                 <BrandDescription />
+                <About />
             </div>
         );
     } 

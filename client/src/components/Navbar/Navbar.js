@@ -27,12 +27,12 @@ class Navbar extends Component {
             <ul className='navbar-nav list-group list-group-horizontal'>
                 <li>
                     <Link className='btn btn-sm active mr-1 mb-1' to='/'>
-                        Home
+                        About
                     </Link>
                 </li>
                 <li>
                     <Link className='btn btn-sm active mr-1 mb-1' to='/dashboard'>
-                        Dashboard
+                        Main
                     </Link>
                 </li>
                 <li>

@@ -6,43 +6,63 @@ import "./style.css"
 function Sidebar() {
         return (
                 <aside>
-                        <ul className="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+                        <ul className="navbar-nav sidebar accordion">
 
                                 <Link to="/" className="sidebar-brand d-flex align-items-center justify-content-center">
                                         <div className="sidebar-brand-icon rotate-n-15">
-                                                <i className="far fa-user-circle" />
+                                                
                                         </div>
-                                        <div className="sidebar-brand-text mx-3">Company</div>
+                                        <div className="sidebar-brand-text mx-3">Hotel Name goes here</div>
                                 </Link>
 
                                 {/* Divider */}
                                 <hr className="sidebar-divider" />
 
+                                <h1>Menu</h1>
+                                <hr className="sidebar-divider" />
+
                                 {/* Nav Item - Dashboard */}
                                 <Item active={''}
                                         href={"/dashboard"}
-                                        icon={<i className="fas fa-folder-minus" />}
-                                        text={<span>Dashboard</span>} />
+                                        icon={<i className="fas fa-paperclip" />}
+                                        text={<span>Bulletins</span>} />
 
                                 {/* Divider */}
                                 <hr className="sidebar-divider d-none d-md-block" />
 
 
-                                {/* Nav Item - Profile */}
+                                {/* Nav Item - Profile
                                 <Item active={''}
                                         href={"/profile"}
                                         icon={<i className="fas fa-user-alt" />}
                                         text={<span>Profile</span>} />
 
                                 {/* Divider */}
+                                {/* <hr className="sidebar-divider d-none d-md-block" /> */} 
+
+                                {/* Nav Item - Inquiry */}
+                                <Item active={''}
+                                        href={"/inquiry"}
+                                        icon={<i className="fas fa-paperclip" />}
+                                        text={<span>Inquiry</span>} />
+
+                                {/* Divider */}
                                 <hr className="sidebar-divider d-none d-md-block" />
 
-
-                                {/* Nav Item - Roster */}
+                                {/* Nav Item - Add Listing */}
                                 <Item active={''}
                                         href={"/addlisting"}
-                                        icon={<i className="fas fa-calendar-week" />}
+                                        icon={<i className="fas fa-paperclip" />}
                                         text={<span>Add Listing</span>} />
+
+                                {/* Divider */}
+                                <hr className="sidebar-divider d-none d-md-block" />
+
+                                {/* Nav Item - Scamwatch */}
+                                <Item active={''}
+                                        href={"/scamwatch"}
+                                        icon={<i className="fas fa-paperclip" />}
+                                        text={<span>Scamwatch</span>} />
 
                                 {/* Divider */}
                                 <hr className="sidebar-divider d-none d-md-block" />

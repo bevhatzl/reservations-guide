@@ -8,11 +8,11 @@ class LandingJumbo extends Component {
                 <div className='col-sm-8 mx-auto jumboText'>
                     <h1 className='d-flex justify-content-center companyName'>
                         <div className="sidebar-brand-icon rotate-n-15 mr-2">
-                            <i className="far fa-user-circle" />
+                            
                         </div> 
-                        <div>TITLE</div>
+                        <div>Hotel Reservations Guide</div>
                     </h1>
-                    <h2 className='text-center companySlogan'>BEST SLOGAN HERE</h2>
+                    <h3 className='text-center companySlogan'>Letting you make safe reservation choices</h3>
                 </div>
             </div>
         );
