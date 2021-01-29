@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { Component } from "react";
+import jwt_decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 import Item from './Item';
 import "./style.css"
 
-function Sidebar() {
+class Sidebar extends Component {
+        constructor() {
+            super()
+            this.state = {
+                hotel_name: '',
+                email: '',
+                password: ''
+            }
+        }
+    
+        componentDidMount() {
+            const token = localStorage.usertoken;
+            const decoded = jwt_decode(token);
+            this.setState({
+                hotel_name: decoded.hotel_name,
+                email: decoded.email
+            })
+        }
+
+render () {
         return (
                 <aside>
                         <ul className="navbar-nav sidebar accordion">
@@ -12,7 +32,7 @@ function Sidebar() {
                                         <div className="sidebar-brand-icon rotate-n-15">
                                                 
                                         </div>
-                                        <div className="sidebar-brand-text mx-3">Hotel Name goes here</div>
+                                        <div className="sidebar-brand-text mx-3">{this.state.hotel_name}</div>
                                 </Link>
 
                                 {/* Divider */}
@@ -73,4 +93,7 @@ function Sidebar() {
 
         );
 }
+}
+
+
 export default Sidebar;

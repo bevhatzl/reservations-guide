@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Sidebar from "../../Sidebar/Sidebar";
 import BlacklistForm from  "../../BlacklistForm/BlacklistForm.js"
 import DasboardNewsCard from "../../DasboardNewsCard/DasboardNewsCard"
-
+import "./style.css";
 
 class Addlisting extends Component {
     render() {

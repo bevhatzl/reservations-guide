@@ -29,7 +29,7 @@ class DashBoard extends Component {
                     <Sidebar />
                     <div>
                         <h1>
-                             Welcome { this.state.hotel_name } 
+                             Latest Bulletins 
                         </h1>
                         <div className="d-flex flex-row-reverse mr-5">
                             <DasboardNewsCard />
