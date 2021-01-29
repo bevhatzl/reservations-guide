@@ -9,6 +9,10 @@ export default {
 
   saveBulletin: function(bulletinData) {
     return axios.post("/api/bulletin", bulletinData);
+  },
+
+  getBulletins: function(bulletinList) {
+    return axios.get("/api/bulletins", bulletinList);
   }
 
 };

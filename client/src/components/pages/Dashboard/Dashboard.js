@@ -13,7 +13,8 @@ class DashBoard extends Component {
             email: '',
             password: '',
             bulletin_title: '',
-            message: ''
+            message: '',
+            bulletin_list: []
         }
     }
 
@@ -23,9 +24,15 @@ class DashBoard extends Component {
         this.setState({
             hotel_name: decoded.hotel_name,
             email: decoded.email
-        })
+        });
+        API.getBulletins()
+      .then(res => this.setState({ bulletin_list: res.data }))
+      .then(console.log(this.state.bulletin_list))
+      .catch(err => console.log(err));
+        
     }
 
+   
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
       };
@@ -92,7 +99,9 @@ class DashBoard extends Component {
                         </div>
 
                         <div className="d-flex flex-row-reverse mr-5">
-                            <DasboardNewsCard />
+                            <DasboardNewsCard bulletins={this.state.bulletin_list} />
+                            {console.log(this.state.bulletin_list)}
+                            
                         </div>
                     </div>
             </div>

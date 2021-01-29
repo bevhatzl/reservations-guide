@@ -1,18 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css"
 
-class DasboardPayslipCard extends Component {
-    render() {
-        return (
-            <div className="dashboardCard card cardBackground">
+function DashboardNewsCard(props) {
+  
+
+
+
+return (
+  
+    <div className="dashboardCard">
+        {props.bulletins.map(item => (
+            
+        <div className="dashboardCard card cardBackground" key={item._id}>
                 <div className="card-body">
-                    <h4 className="card-subtitle">Title goes here</h4>
-                    <p className="card-text">Message goes here</p>
-                    {/* <a href="/" className="card-link bottomLink">More details</a> */}
+                    
+                    <h4>Added By: {item.hotel_name}</h4><span>At: {item.entry_date}</span>
+                    <h3 className="card-subtitle">{item.bulletin_title}</h3>
+                    <br />
+                    <p id="bulletin-text">{item.message}</p>
                 </div>
-            </div>
-        );
-    }
+                </div>
+           
+        ))}
+
+ </div>
+)
+
+
 }
 
-export default DasboardPayslipCard;
+
+export default DashboardNewsCard;
+
+
+

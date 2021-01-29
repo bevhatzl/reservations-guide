@@ -3,7 +3,12 @@
     min-height: 400px;
 }
 
-.bottomLink {
+/* .bottomLink {
     position: absolute; 
     bottom: 5px; 
+} */
+
+#bulletin-text {
+    color: black;
+    font-size: 16px;
 }
