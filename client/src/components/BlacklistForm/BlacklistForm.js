@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/api";
+import DatePickerInput from "../DatePickerInput/DatePickerInput"
 import jwt_decode from 'jwt-decode';
 import "./style.css";
+// import DatePicker from 'react-date-picker';
 
 class BlacklistForm extends Component {
     constructor() {
@@ -38,6 +40,7 @@ class BlacklistForm extends Component {
     // Handles updating component state when the user types into the input field
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
+  
       };
 
     // Displays more credit card questions if payment by credit card. Switch back if other method.
@@ -53,6 +56,10 @@ class BlacklistForm extends Component {
        }
       }
 
+      handleDOB = (DOBValue) => {
+        this.setState({guest_DOB: DOBValue});
+        console.log(this.state.guest_DOB)
+    }
 
   // When the form is submitted, use the API.saveBlacklist method to save the blacklist data
   handleFormSubmit = (event) => {    
@@ -102,13 +109,19 @@ class BlacklistForm extends Component {
               />
               </label>
               <label>Date of Birth:
-              <input
+              {/* <input
               onChange={this.handleInputChange}
                 name="guest_DOB"
                 placeholder="required"
                 value={guest_DOB}
-              />
+              /> */}
+              <DatePickerInput  />
+                 {/* onChange={this.handleInputChange}
+                name="guest_DOB"
+                value={guest_DOB} */}
+            
               </label>
+
               <label>Guest Street Address:
               <input
               onChange={this.handleInputChange}
@@ -121,7 +134,6 @@ class BlacklistForm extends Component {
               <input
               onChange={this.handleInputChange}
                 name="guest_city"
-                // placeholder="Guest City"
                 value={guest_city}
               />
               </label>
