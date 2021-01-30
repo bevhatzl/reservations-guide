@@ -12,7 +12,7 @@ const BlacklistSchema = new Schema({
     required: true
   },
   guest_DOB: {
-    type: String,
+    type: Date,
     required: true
   },
   guest_st_address: {
