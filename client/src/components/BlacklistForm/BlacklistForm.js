@@ -56,6 +56,11 @@ class BlacklistForm extends Component {
     console.log(this.state.guest_DOB)
   }
 
+  handleCHDOB = (DOBValue) => {
+    this.setState({ch_DOB: DOBValue});
+    console.log(this.state.ch_DOB)
+  }
+
   // When the form is submitted, use the API.saveBlacklist method to save the blacklist data
   handleFormSubmit = (event) => {    
     event.preventDefault();
@@ -90,15 +95,14 @@ class BlacklistForm extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
             <legend>Guest Details: </legend>
-            <label> Guest Name:
+            <label> Guest Name (required):
               <input
                 onChange={this.handleInputChange}
                 name="guest_name"
-                placeholder="required"
                 value={guest_name}
               />
             </label>
-            <label>Date of Birth:
+            <label>Date of Birth (required):
               <DatePicker
                 calendarAriaLabel="Toggle calendar"
                 clearAriaLabel="Clear value"
@@ -110,6 +114,7 @@ class BlacklistForm extends Component {
                 yearAriaLabel="Year"                            
               />
             </label>
+            <br />
             <label>Guest Street Address:
               <input
                 onChange={this.handleInputChange}
@@ -117,6 +122,7 @@ class BlacklistForm extends Component {
                 value={guest_st_address}
               />
             </label>
+            <br />
             <label>City:
               <input
               onChange={this.handleInputChange}
@@ -124,6 +130,7 @@ class BlacklistForm extends Component {
               value={guest_city}
               />
             </label>
+            <br />
             <label>Country:
               <input
                 onChange={this.handleInputChange}
@@ -138,20 +145,26 @@ class BlacklistForm extends Component {
                 value={guest_phone}
               />
             </label>
-            <label>ID Number:
+            <label>ID Number (required):
               <input
                 onChange={this.handleInputChange}
                 name="guest_ID_num"
-                placeholder="required"
                 value={guest_ID_num}
               />
             </label>
-            <label>ID Type:
-              <input
+            <label>ID Type (required):
+              <select
                 onChange={this.handleInputChange}
                 name="guest_ID_type"
                 value={guest_ID_type}
-              />
+                placeholder="Select"
+              >
+                <option value="" defaultValue disabled hidden>Select one</option>
+                <option value="Driver License">Driver License</option>
+                <option value="Passport">Passport</option>
+                <option value="Proof of Age">Proof of Age</option>
+                <option value="Other">Other</option>
+              </select>
             </label>
             <label>Payment Method:
               <select
@@ -173,15 +186,19 @@ class BlacklistForm extends Component {
               <input
                 onChange={this.handleInputChange}
                 name="ch_name"
-                placeholder="Cardholder name"
                 value={ch_name}
               />
             </label>
             <label>Date of Birth:
-              <input
-                onChange={this.handleInputChange}
-                name="ch_DOB"
+              <DatePicker
+                calendarAriaLabel="Toggle calendar"
+                clearAriaLabel="Clear value"
+                dayAriaLabel="Day"
+                monthAriaLabel="Month"
+                nativeInputAriaLabel="Date"
+                onChange={this.handleCHDOB}
                 value={ch_DOB}
+                yearAriaLabel="Year"                            
               />
             </label>
             <label>ID Number:
@@ -192,32 +209,47 @@ class BlacklistForm extends Component {
               />
             </label>
             <label>ID Type:
-              <input
+              <select
                 onChange={this.handleInputChange}
                 name="ch_ID_type"
-                placeholder="Cardholder ID type"
                 value={ch_ID_type}
-              />
+                placeholder="Select"
+              >
+                <option value="" defaultValue disabled hidden>Select one</option>
+                <option value="Driver License">Driver License</option>
+                <option value="Passport">Passport</option>
+                <option value="Proof of Age">Proof of Age</option>
+                <option value="Other">Other</option>
+              </select>
             </label>
           </fieldset>
 
           <fieldset>
             <legend>Details of Blacklisting</legend>
             <label>Reason for blacklisting:
-              <input
+              <select
                 onChange={this.handleInputChange}
                 name="reason"
-                // placeholder="Reason for blacklisting"
                 value={reason}
-              />
+                placeholder="Select"
+              >
+                <option value="" defaultValue disabled hidden>Select one</option>
+                <option value="Theft Damage">Theft/Damage</option>
+                <option value="Noisy">Noise Complaint</option>
+                <option value="Dispute">Dispute/Chargeback</option>
+                <option value="Fraud">Fraud</option>
+                <option value="Other">Other</option>
+              </select>
             </label>
+            <br />
             <label>Description:
-              <input
+              <textarea rows="4" cols="40"
                 onChange={this.handleInputChange}
                 name="description"
-                placeholder="Provide a description of the blacklisting reason and events including a physical description of the guest, check-in and check-out dates and any email address provided by the guest or the cardholder."
+                placeholder="Provide a detailed description of the blacklisting reason including a physical description of the guest, check-in and check-out dates and any email address provided by the guest or the cardholder."
                 value={description}
-              />
+              >
+              </textarea>
             </label>
           </fieldset>             
           
