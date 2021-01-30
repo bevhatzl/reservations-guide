@@ -65,6 +65,12 @@ class BlacklistForm extends Component {
   handleFormSubmit = (event) => {    
     event.preventDefault();
     const { hotel_name, guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description } = this.state;
+    const missingDataWarning = document.getElementById('missing-data');
+    if (!guest_name || !guest_DOB || !guest_ID_num || !guest_ID_type) {
+      missingDataWarning.style.display = "block";
+    } else {
+      missingDataWarning.style.display = "none";
+    }
     console.log(hotel_name, guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description);
 
     API.saveBlacklist({hotel_name, guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description})
@@ -253,8 +259,10 @@ class BlacklistForm extends Component {
             </label>
           </fieldset>             
           
-          <button type="submit">  Submit Blacklisting </button>
-      
+          <button type="submit"
+            disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
+          >  Submit Blacklisting </button>
+          <div id="missing-data">Please enter all of the required fields</div>
         </form>
                   
       </div>
