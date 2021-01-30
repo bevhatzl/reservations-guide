@@ -49,7 +49,7 @@ class DashBoard extends Component {
         const { hotel_name, bulletin_title, message } = this.state;
         
         console.log(hotel_name, bulletin_title, message);
-    
+        this.state.bulletin_list.unshift({ hotel_name: hotel_name, bulletin_title: bulletin_title, message: message, entry_date: 'today' })
         
           API.saveBulletin({hotel_name, bulletin_title, message})
             .then(() => {this.setState({
