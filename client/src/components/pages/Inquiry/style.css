@@ -15,3 +15,7 @@
 .fc-title {
     color: black;
 }
+
+#missing-data {
+    display: none;
+}
