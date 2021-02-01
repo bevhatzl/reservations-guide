@@ -33,7 +33,7 @@ const BlacklistSchema = new Schema({
   },
   guest_ID_type: {
     type: String,
-    required: true
+    required: false
   },
   pay_method: {
     type: String

@@ -8,7 +8,8 @@ export default {
   },
 
   getBlacklistResults: function(blacklistResults) {
-    return axios.get("/api/blacklists", blacklistResults);
+    console.log(blacklistResults)
+    return axios.get(`/api/blacklists/${blacklistResults.guest_name}/${blacklistResults.guest_DOB}/${blacklistResults.id_search}`, blacklistResults);
   },
 
   saveBulletin: function(bulletinData) {
