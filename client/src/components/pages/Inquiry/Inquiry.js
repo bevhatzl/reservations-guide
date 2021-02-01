@@ -41,30 +41,27 @@ class Inquiry extends Component {
             console.log(guest_name, guest_DOB, id_search);
             console.log(this.state.search_match)
 
-            if (!guest_name && !guest_DOB) {   // Do an ID search
+            if (!guest_name && !guest_DOB) {   // Do an ID only search
                 console.log("do id search")
                 API.getBlacklistResults({id_search})
-                    .then(res => this.setState({search_match: res.data}))
-                    .then(console.log(this.state.search_match))
+                    .then(res => this.setState({search_match: res.data}, () => console.log(this.state.search_match)))
                     .then(() => this.setState({
                         id_search: ""
                 }))
                     .catch(err => console.log(err));  
-            } else if (!id_search) {
+            } else if (!id_search) {  // Do a name and DOB search only
                 console.log("Do a name and DOB search")
                 API.getBlacklistByNameAndDOB({guest_name, guest_DOB})
                     .then(res => this.setState({search_match: res.data}))
-                    .then(console.log(this.state.search_match))
                     .then(() => this.setState({
                         guest_name: "",
                         guest_DOB: ""
                 }))
                     .catch(err => console.log(err));
-            } else {
+            } else {   // Do a name, dob and ID search
                 console.log("do name, dob and id search")
                 API.getResultsAll({guest_name, guest_DOB, id_search})
                     .then(res => this.setState({search_match: res.data}))
-                    .then(console.log(this.state.search_match))
                     .then(() => this.setState({
                         id_search: "",
                         guest_name: "",
@@ -124,6 +121,7 @@ class Inquiry extends Component {
                         </form>
                     </div>
               
+                  
                 {/* <div className="dashboardCard">
                         {this.search_match.map(item => (            
                             <div className="dashboardCard card cardBackground" key={item._id}>
@@ -136,7 +134,7 @@ class Inquiry extends Component {
                                 </div>
                             </div>           
                         ))}
-                    </div> */}
+                </div> */}
                 
             </div>
         );

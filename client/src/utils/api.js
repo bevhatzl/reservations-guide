@@ -22,7 +22,6 @@ export default {
     return axios.get(`/api/blacklists/${blacklistResults.guest_name}/${blacklistResults.guest_DOB}/${blacklistResults.id_search}`, blacklistResults);
   },
 
-
   saveBulletin: function(bulletinData) {
     return axios.post("/api/bulletin", bulletinData);
   },
