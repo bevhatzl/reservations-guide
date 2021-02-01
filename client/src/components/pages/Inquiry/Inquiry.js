@@ -121,9 +121,10 @@ class Inquiry extends Component {
                         </form>
                     </div>
               
+                {(this.state.search_match.length) > 0 ?
                   
-                {/* <div className="dashboardCard">
-                        {this.search_match.map(item => (            
+                 <div className="dashboardCard">
+                        {this.state.search_match.map(item => (            
                             <div className="dashboardCard card cardBackground" key={item._id}>
                                 <div className="card-body">
                                     <h4>Added By: {item.hotel_name}</h4><span>At: {item.entry_date}</span>
@@ -134,7 +135,11 @@ class Inquiry extends Component {
                                 </div>
                             </div>           
                         ))}
-                </div> */}
+                </div> 
+
+                : <div></div>
+
+                }
                 
             </div>
         );
