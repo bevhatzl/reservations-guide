@@ -28,26 +28,53 @@ class Inquiry extends Component {
     // When the form is submitted, use the API.getBlacklistResults method to get the results
     handleFormSubmit = (event) => {    
         event.preventDefault();
+        console.log(this.state.search_match)
         const { guest_name, guest_DOB, id_search } = this.state;
-        this.setState({search_match: [] })
+        this.setState( {search_match: []} )
+        // const search_match = this.state.search_match;
+        // this.setState({search_match: [] })
         const missingDataWarning = document.getElementById('missing-data');
         if ((!guest_name && !guest_DOB) && (!id_search)) {
             missingDataWarning.style.display = "block";
         } else {
             missingDataWarning.style.display = "none";
             console.log(guest_name, guest_DOB, id_search);
+            console.log(this.state.search_match)
 
-            API.getBlacklistResults({guest_name, guest_DOB, id_search})
-                .then(res => this.setState({search_match: res.data}))
-                .then(console.log(this.search_match))
-                .then(() => this.setState({
-                    guest_name: "",
-                    guest_DOB: "",
-                    id_search: "",
+            if (!guest_name && !guest_DOB) {   // Do an ID search
+                console.log("do id search")
+                API.getBlacklistResults({id_search})
+                    .then(res => this.setState({search_match: res.data}))
+                    .then(console.log(this.state.search_match))
+                    .then(() => this.setState({
+                        id_search: ""
                 }))
-                .catch(err => console.log(err));    
+                    .catch(err => console.log(err));  
+            } else if (!id_search) {
+                console.log("Do a name and DOB search")
+                API.getBlacklistByNameAndDOB({guest_name, guest_DOB})
+                    .then(res => this.setState({search_match: res.data}))
+                    .then(console.log(this.state.search_match))
+                    .then(() => this.setState({
+                        guest_name: "",
+                        guest_DOB: ""
+                }))
+                    .catch(err => console.log(err));
+            } else {
+                console.log("do name, dob and id search")
+                API.getResultsAll({guest_name, guest_DOB, id_search})
+                    .then(res => this.setState({search_match: res.data}))
+                    .then(console.log(this.state.search_match))
+                    .then(() => this.setState({
+                        id_search: "",
+                        guest_name: "",
+                        guest_DOB: ""
+                }))
+                    .catch(err => console.log(err));  
+            }
+
         }
-    
+        console.log(this.state.search_match)
     };
 
     render() {
