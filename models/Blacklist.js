@@ -42,7 +42,7 @@ const BlacklistSchema = new Schema({
     type: String
   },
   ch_DOB: {
-    type: String
+    type: Date
   },
   ch_ID_num: {
     type: String

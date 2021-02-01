@@ -127,10 +127,11 @@ class Inquiry extends Component {
                         {this.state.search_match.map(item => (            
                             <div className="dashboardCard card cardBackground" key={item._id}>
                                 <div className="card-body">
-                                    <h4>Added By: {item.hotel_name}</h4><span>At: {item.entry_date}</span>
+                                    <h4>Added By: {item.hotel_name}</h4><span>At: {new Date(item.entry_date).toLocaleDateString("en-AU")}</span>
                                     <br />
                                     <p >{item.guest_name}</p>
-                                    <p >{item.guest_DOB}</p>
+                                    {/* {guest_DOB = new Date(item.guest_DOB).toLocaleDateString("en-US")} */}
+                                    <p >{new Date(item.guest_DOB).toLocaleDateString("en-AU")}</p>
                                     <p >{item.guest_ID_num}</p>
                                 </div>
                             </div>           
