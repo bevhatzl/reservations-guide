@@ -7,6 +7,8 @@ import Register from "./components/Register/register";
 import Login from "./components/Login/login";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Inquiry from "./components/pages/Inquiry/Inquiry";
+import howTo from "./components/pages/howTo/howTo";
+import usefulInfo from "./components/pages/usefulInfo/usefulInfo";
 // import Profile from "./components/Profile/profile";
 import Addlisting from "./components/pages/Addlisting/Addlisting";
 
@@ -31,6 +33,9 @@ class App extends Component {
                             <Route exact path="/addlisting" component={Addlisting} />
                             <Route exact path="/inquiry" component={Inquiry} />
                             <Route exact path="/startUp" component={StartUp} />
+                            <Route exact path="/howTo" component={howTo} />
+                            <Route exact path="/usefulInfo" component={usefulInfo} />
+                            
                         </div>       
                                       
                     </div>

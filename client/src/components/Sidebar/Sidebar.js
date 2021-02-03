@@ -81,13 +81,13 @@ render () {
                                 <hr className="sidebar-divider d-none d-md-block" />
 
                                 {/* Nav Item - Scamwatch */}
-                                <Item active={''}
+                                {/* <Item active={''}
                                         href={"/scamwatch"}
                                         icon={<i className="fas fa-paperclip" />}
-                                        text={<span>Scamwatch</span>} />
+                                        text={<span>Scamwatch</span>} /> */}
 
                                 {/* Divider */}
-                                <hr className="sidebar-divider d-none d-md-block" />
+                                {/* <hr className="sidebar-divider d-none d-md-block" /> */}
 
 
                         </ul>
