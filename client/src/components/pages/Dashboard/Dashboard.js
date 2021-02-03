@@ -15,7 +15,8 @@ class DashBoard extends Component {
         password: '',
         bulletin_title: '',
         message: '',
-        bulletin_list: []
+        bulletin_list: [],
+        entry_date: new Date()
       }
   }
 
@@ -44,9 +45,9 @@ class DashBoard extends Component {
 
   handleFormSubmit = (event) => {    
     event.preventDefault();
-    const { hotel_name, bulletin_title, message } = this.state;
+    const { hotel_name, bulletin_title, message, entry_date } = this.state;
     console.log(hotel_name, bulletin_title, message);
-    this.state.bulletin_list.unshift({ hotel_name: hotel_name, bulletin_title: bulletin_title, message: message, entry_date: 'today' })
+    this.state.bulletin_list.unshift({ hotel_name: hotel_name, bulletin_title: bulletin_title, message: message, entry_date: entry_date })
         
     API.saveBulletin({hotel_name, bulletin_title, message})
       .then(() => {this.setState({
