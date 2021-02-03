@@ -31,7 +31,8 @@ class App extends Component {
                             <Route exact path="/addlisting" component={Addlisting} />
                             <Route exact path="/inquiry" component={Inquiry} />
                             <Route exact path="/startUp" component={StartUp} />
-                        </div>                        
+                        </div>       
+                                      
                     </div>
                     
                 </Router>

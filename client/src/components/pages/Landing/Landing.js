@@ -11,8 +11,10 @@ class Landing extends Component {
                 <div className="d-flex justify-content-center backgroundImg">
                     <LandingJumbo />
                 </div>     
+                <div className="d-flex justify-content-center backgroundImg">
                 <BrandDescription />
-                <About />
+                </div>
+                {/* <About /> */}
             </div>
         );
     } 

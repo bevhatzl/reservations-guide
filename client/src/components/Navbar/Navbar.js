@@ -10,7 +10,7 @@ class Navbar extends Component {
     }
     render() {
         const loginRegLink = (
-            <ul className='navbar-nav list-group list-group-horizontal'>
+            <ul className='navbar-nav list-group list-group-horizontal' id="top-nav">
                 <li>
                     <Link className='btn btn-sm active mr-1 mb-1' to='/login'>
                         Login

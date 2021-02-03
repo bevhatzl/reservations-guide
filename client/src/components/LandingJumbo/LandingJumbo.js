@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./style.css"
 
 class LandingJumbo extends Component {
     render() {

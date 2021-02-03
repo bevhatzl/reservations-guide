@@ -4,7 +4,7 @@
 }
 
 .cardBackground{
-    background-color: rgb(231, 248, 255)!important;
+    background-color: #C3E0E5 !important;
 }
 
 
@@ -43,4 +43,8 @@
 
 .googleLogo:hover {
     color: #dc5246 !important;
+}
+
+.backgroundImg {
+    background-color: #C3E0E5;
 }

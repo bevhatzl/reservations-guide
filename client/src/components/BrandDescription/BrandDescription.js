@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import "./style.css";
+import Footer from '../Footer/Footer';
 
 class BrandDescription extends Component {
     render() {
         return (
             <div className="container-fluid d-flex justify-content-center p-0 m-0">
                 <div className="row m-0 p-0">
-                    <div className="cardBackground card col-md-12 col-xs-12">
-                        <div className="card-body">
-                            Image goes here
+                    
+                        <div className="card-body" id="content">
+                            <p>Blacklisted hotels guests cause problems and financial losses. You keep your own records of blacklisted guests but how do you know if a guest has been blacklisted at another hotel?</p>
+                            <p>Hotel Reservations Guide gives you the information you need to enter details of blacklisted guests and allows you to search potential guests before confirming a new reservation.</p>
                         </div>
+                   
+                    <div id="footer-container">
+                    <Footer />
                     </div>
-
                 </div>
             </div>
         );
@@ -19,3 +23,4 @@ class BrandDescription extends Component {
 }
 
 export default BrandDescription;
+

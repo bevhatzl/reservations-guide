@@ -119,7 +119,7 @@ class Inquiry extends Component {
                             </button>
                             <div id="missing-data">Please enter guest name and date of birth OR ID number.</div>
                         </form>
-                    </div>
+                    
               
                 {(this.state.search_match.length) > 0 ?
                   
@@ -129,10 +129,13 @@ class Inquiry extends Component {
                                 <div className="card-body">
                                     <h4>Added By: {item.hotel_name}</h4><span>At: {new Date(item.entry_date).toLocaleDateString("en-AU")}</span>
                                     <br />
-                                    <p >{item.guest_name}</p>
+                                    <p >Guest Name: {item.guest_name}</p><span>Date of Birth: {new Date(item.guest_DOB).toLocaleDateString("en-AU")}</span>
                                     {/* {guest_DOB = new Date(item.guest_DOB).toLocaleDateString("en-US")} */}
-                                    <p >{new Date(item.guest_DOB).toLocaleDateString("en-AU")}</p>
-                                    <p >{item.guest_ID_num}</p>
+                                    <p >Address: {item.guest_st_address}, </p><span>{item.guest_city}</span>
+                                    <p >{item.guest_country}</p>
+                                    <p>Phone: {item.guest_phone}</p>
+                                    <p>ID number: {item.guest_ID_num}</p><span>Type: {item.guest_ID_type}</span>
+                                    <p>Payment Method: {item.pay_method}</p>
                                 </div>
                             </div>           
                         ))}
@@ -141,6 +144,8 @@ class Inquiry extends Component {
                 : <div></div>
 
                 }
+
+                </div>
                 
             </div>
         );
