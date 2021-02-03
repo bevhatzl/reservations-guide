@@ -16,13 +16,30 @@ h1 {
 #add-entry-form {
     display: none;
     margin-left: 40%;
+    
 }
 
 #bulletin-cont {
     background-color: #C3E0E5;
-    
+    min-height: 1000px;
     /* width: 50%; */
 }
 
+#add-btn {
+    margin-left: 20px;
+}
 
+.label-bulletin {
+    color: black;
+
+}
+
+input {
+    margin-left: 10px !important;
+    min-width: 375px;
+}
+
+textarea {
+    margin-left: 10px !important;
+}
 

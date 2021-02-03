@@ -78,7 +78,7 @@ class DashBoard extends Component {
                         <div id="add-entry-form">
                             
                             <form onSubmit={this.handleFormSubmit}>
-                            <label>Title:
+                            <label className="label-bulletin">Title:
               <input
               onChange={this.handleInputChange}
                 name="bulletin_title"
@@ -86,15 +86,16 @@ class DashBoard extends Component {
               />
               </label>
               <br />
-              <label>Message:
-              <input 
+              <label className="label-bulletin">Message:
+              <textarea rows="4" cols="40" 
               onChange={this.handleInputChange}
                 name="message"
-                placeholder="Provide a detailed description of the significant event which happened to alert other hotels."
+                placeholder="Provide a detailed description of the event to alert other hotels."
                 value={message}
-              />
+              >
+              </textarea>
               </label>
-              <button type="submit">Add Bulletin </button>
+              <button type="submit" id="add-btn">Add Bulletin </button>
                             </form>
                         </div>
 
