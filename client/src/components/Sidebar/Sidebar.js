@@ -25,7 +25,7 @@ class Sidebar extends Component {
 
 render () {
         return (
-                <aside>
+                <aside id="sidebar-cont">
                         <ul className="navbar-nav sidebar accordion">
 
                                 <Link to="/" className="sidebar-brand d-flex align-items-center justify-content-center">
@@ -38,11 +38,13 @@ render () {
                                 {/* Divider */}
                                 <hr className="sidebar-divider" />
 
-                                <h1>Menu</h1>
+                                <h1 id="menu-title">Menu</h1>
                                 <hr className="sidebar-divider" />
 
                                 {/* Nav Item - Dashboard */}
-                                <Item active={''}
+                                <Item 
+                        
+                                active={''}
                                         href={"/dashboard"}
                                         icon={<i className="fas fa-paperclip" />}
                                         text={<span>Bulletins</span>} />

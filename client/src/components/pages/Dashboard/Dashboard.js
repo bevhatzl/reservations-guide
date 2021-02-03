@@ -67,12 +67,12 @@ class DashBoard extends Component {
     render() {
         const { bulletin_title, message } = this.state;
         return (
-            <div className="container-fluid pl-0">
+            <div className="container-fluid pl-0" id="bulletin-cont">
                     <Sidebar />
                     <div>
                         <h1>
                              Latest Bulletins 
-                             <span id="add-bulletin" onClick={this.handleAddButton}>+</span>
+                             <span id="add-bulletin" onClick={this.handleAddButton}>+ Add</span>
                         </h1>
                         
                         <div id="add-entry-form">
@@ -87,7 +87,7 @@ class DashBoard extends Component {
               </label>
               <br />
               <label>Message:
-              <input
+              <input 
               onChange={this.handleInputChange}
                 name="message"
                 placeholder="Provide a detailed description of the significant event which happened to alert other hotels."

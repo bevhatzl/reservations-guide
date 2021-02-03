@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { registerUser, getUsers } from '../UserFunctions/userFunctions';
+import "./style.css"
 
 class Register extends Component {
     constructor(props) {
@@ -103,7 +104,7 @@ class Register extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container' id="container">
                 <div className='row'>
                     <div className='col-md-6 mt-5 mx-auto'>
                         <form noValidate onSubmit={this.onSubmit}>

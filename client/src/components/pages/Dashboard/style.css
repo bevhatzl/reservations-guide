@@ -1,14 +1,28 @@
 h1 {
     padding-left: 10%;
+    color: black !important;
 }
 
 #add-bulletin {
     margin-left: 10%;
     text-align: end;
+    font-size: 30px;
+}
+
+#add-bulletin:hover {
+    cursor: pointer;
 }
 
 #add-entry-form {
     display: none;
     margin-left: 40%;
 }
+
+#bulletin-cont {
+    background-color: #C3E0E5;
+    
+    /* width: 50%; */
+}
+
+
 

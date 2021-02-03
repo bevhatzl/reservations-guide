@@ -9,6 +9,16 @@
 } */
 
 #bulletin-text {
-    color: black;
+    color: white;
     font-size: 16px;
+}
+
+#card-bulletin {
+    background-color: #5885AF !important;
+    color: white;
+    /* width: 50%; */
+}
+
+.card-subtitle {
+    color: white;
 }

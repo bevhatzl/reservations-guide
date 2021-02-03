@@ -7,6 +7,20 @@ aside
     border: 1px solid #111;
 }
 
-/* .sidebar {
-    background-color:#3f0f84;
-} */
+#sidebar-cont {
+    background-color:#41729F;
+}
+
+.sidebar-brand-text {
+    color: white !important;
+}
+
+#menu-title {
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+
