@@ -23,7 +23,6 @@ class Inquiry extends Component {
 
     handleDOB = (DOBValue) => {
         this.setState({guest_DOB: DOBValue});
-        console.log(this.state.guest_DOB)
     }
 
     // When the form is submitted, use the API.getBlacklistResults method to get the results
@@ -42,7 +41,6 @@ class Inquiry extends Component {
             console.log(guest_name, guest_DOB, id_search);
             console.log(this.state.search_match)
             if (!guest_name && !guest_DOB) {   // Do an ID only search
-                console.log("do id search")
                 API.getBlacklistResults({id_search})
                     .then(res => this.setState({search_match: res.data}, () => console.log(this.state.search_match)))
                     .then(() => this.setState({
@@ -59,7 +57,6 @@ class Inquiry extends Component {
                 }))
                     .catch(err => console.log(err));
             } else {   // Do a name, dob and ID search
-                console.log("do name, dob and id search")
                 API.getResultsAll({guest_name, guest_DOB, id_search})
                     .then(res => this.setState({search_match: res.data}))
                     .then(() => this.setState({
@@ -68,6 +65,10 @@ class Inquiry extends Component {
                         guest_DOB: ""
                 }))
                     .catch(err => console.log(err));  
+            }
+            if (this.state.search_match.length === 0) {
+                const noResultsBlock = document.getElementById('no-results');
+                noResultsBlock.style.display = "block";
             }
         }
         console.log(this.state.search_match)
@@ -81,7 +82,9 @@ class Inquiry extends Component {
                 <div className="content">                    
                     <form onSubmit={this.handleFormSubmit}>
                         <fieldset>
-                            <legend>Search by Guest name and date of birth: </legend>
+                            <div id="heading-main-inquiry">
+                                <legend>Search by Guest name and date of birth OR by ID number: </legend>
+                            </div>
                             <label> Guest Name:
                                 <input
                                     onChange={this.handleInputChange}
@@ -89,7 +92,7 @@ class Inquiry extends Component {
                                     value={guest_name}
                                 />
                             </label>
-                            <label>Date of Birth:
+                            <label id="dob-label">Date of Birth:<span className="dob-field"></span>
                                 <DatePicker
                                     calendarAriaLabel="Toggle calendar"
                                     clearAriaLabel="Clear value"
@@ -98,11 +101,13 @@ class Inquiry extends Component {
                                     nativeInputAriaLabel="Date"
                                     onChange={this.handleDOB}
                                     value={guest_DOB}
-                                    yearAriaLabel="Year"                            
+                                    yearAriaLabel="Year"  
+                                    className="dob-datepicker"                          
                                 />
                             </label>
                             <br />
-                            <label>OR Search by ID number:
+                        
+                            <label>Search by ID number:
                                 <input
                                     onChange={this.handleInputChange}
                                     name="id_search"
@@ -112,7 +117,7 @@ class Inquiry extends Component {
                             <br />                     
                         </fieldset>             
           
-                        <button type="submit"
+                        <button type="submit" id="search-btn"
                         // disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
                             > Search 
                         </button>
@@ -137,7 +142,7 @@ class Inquiry extends Component {
                                 </div>           
                             ))}
                         </div> 
-                    : <div></div>}
+                    : <div id="no-results">No results found</div>}
                 </div>
                 <div id="footer-cont">
                     <Footer />

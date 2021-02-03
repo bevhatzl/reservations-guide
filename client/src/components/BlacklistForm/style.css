@@ -18,8 +18,41 @@
 
 #add-form {
     background-color: #C3E0E5;
+    color: black;
 }
 
 #main-add-form-cont {
+    width: 100%;
+}
+
+legend {
+    font-weight: 700;
+}
+
+label {
+    font-weight: 400;
+}
+
+.required-input {
+    font-weight: 700;
+}
+
+.dob-field {
+    margin-right: 10px;
+}
+
+.dob-datepicker {
+    background-color: white;
+}
+
+.id-type-input {
+    margin-left: 10px;
+}
+
+select {
+    margin-left: 10px !important;
+}
+
+.textbox-description {
     width: 100%;
 }

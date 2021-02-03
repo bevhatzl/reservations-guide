@@ -18,7 +18,19 @@
 }
 
 #missing-data {
+    margin-top: 10px;
     display: none;
+    color: black;
+    background-color: yellow;
+    width: 50%;
+}
+
+#no-results {
+    margin-top: 10px;
+    display: none;
+    color: black;
+    background-color: yellow;
+    width: 50%;
 }
 
 #footer-cont {
@@ -35,4 +47,22 @@
 
 #main-content {
     background-color: #C3E0E5;
+}
+
+#heading-main-inquiry {
+    margin-top: 20px;
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+#dob-label {
+    margin-left: 10px;
+  
+}
+
+#search-btn {
+    width: 30%;
 }

@@ -99,18 +99,19 @@ class BlacklistForm extends Component {
     const { guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description } = this.state;
     return (
       <div id="main-add-form-cont">
+        <h1>Add a new blacklisted guest</h1>
       <div id="add-form-cont">
         <form id="add-form" onSubmit={this.handleFormSubmit}>
           <fieldset>
             <legend>Guest Details: </legend>
-            <label> Guest Name (required):
+            <label> Guest Name <span className="required-input">(required):</span>
               <input
                 onChange={this.handleInputChange}
                 name="guest_name"
                 value={guest_name}
               />
             </label>
-            <label>Date of Birth (required):
+            <label>Date of Birth <span className="required-input dob-field">(required):</span>
               <DatePicker
                 calendarAriaLabel="Toggle calendar"
                 clearAriaLabel="Clear value"
@@ -119,11 +120,33 @@ class BlacklistForm extends Component {
                 nativeInputAriaLabel="Date"
                 onChange={this.handleDOB}
                 value={guest_DOB}
-                yearAriaLabel="Year"                            
+                yearAriaLabel="Year" 
+                className="dob-datepicker"                           
               />
             </label>
             <br />
-            <label>Guest Street Address:
+            <label>ID Number <span className="required-input">(required):</span>
+              <input
+                onChange={this.handleInputChange}
+                name="guest_ID_num"
+                value={guest_ID_num}
+              />
+            </label>
+            <label className="id-type-input">ID Type <span className="required-input">(required): </span>
+              <select
+                onChange={this.handleInputChange}
+                name="guest_ID_type"
+                value={guest_ID_type}
+                placeholder="Select"
+              >
+                <option value="" defaultValue disabled hidden>Select one</option>
+                <option value="Driver License">Driver License</option>
+                <option value="Passport">Passport</option>
+                <option value="Proof of Age">Proof of Age</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>Street Address:
               <input
                 onChange={this.handleInputChange}
                 name="guest_st_address"
@@ -153,28 +176,8 @@ class BlacklistForm extends Component {
                 value={guest_phone}
               />
             </label>
-            <label>ID Number (required):
-              <input
-                onChange={this.handleInputChange}
-                name="guest_ID_num"
-                value={guest_ID_num}
-              />
-            </label>
-            <label>ID Type (required):
-              <select
-                onChange={this.handleInputChange}
-                name="guest_ID_type"
-                value={guest_ID_type}
-                placeholder="Select"
-              >
-                <option value="" defaultValue disabled hidden>Select one</option>
-                <option value="Driver License">Driver License</option>
-                <option value="Passport">Passport</option>
-                <option value="Proof of Age">Proof of Age</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-            <label>Payment Method:
+            <br/>
+            <label>Payment Method: 
               <select
                 onChange={this.handlePaymentInputChange}
                 name="pay_method"
@@ -184,6 +187,7 @@ class BlacklistForm extends Component {
                 <option value="" defaultValue disabled hidden>Select one</option>
                 <option value="Credit Card">Credit Card</option>
                 <option value="Cash">Cash</option>
+                <option value="Other">Other</option>
               </select>
             </label>
           </fieldset>
@@ -197,7 +201,8 @@ class BlacklistForm extends Component {
                 value={ch_name}
               />
             </label>
-            <label>Date of Birth:
+            <br/>
+            <label>Date of Birth:<span className="dob-field"></span>
               <DatePicker
                 calendarAriaLabel="Toggle calendar"
                 clearAriaLabel="Clear value"
@@ -206,9 +211,11 @@ class BlacklistForm extends Component {
                 nativeInputAriaLabel="Date"
                 onChange={this.handleCHDOB}
                 value={ch_DOB}
-                yearAriaLabel="Year"                            
+                yearAriaLabel="Year"    
+                className="dob-datepicker"                        
               />
             </label>
+            <br />
             <label>ID Number:
               <input
                 onChange={this.handleInputChange}
@@ -216,7 +223,7 @@ class BlacklistForm extends Component {
                 value={ch_ID_num}
               />
             </label>
-            <label>ID Type:
+            <label className="id-type-input">ID Type:
               <select
                 onChange={this.handleInputChange}
                 name="ch_ID_type"
@@ -256,6 +263,7 @@ class BlacklistForm extends Component {
                 name="description"
                 placeholder="Provide a detailed description of the blacklisting reason including a physical description of the guest, check-in and check-out dates and any email address provided by the guest or the cardholder."
                 value={description}
+                className="textbox-description"
               >
               </textarea>
             </label>
