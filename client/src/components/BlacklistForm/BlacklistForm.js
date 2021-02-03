@@ -3,6 +3,7 @@ import API from "../../utils/api";
 import jwt_decode from 'jwt-decode';
 import "./style.css";
 import DatePicker from 'react-date-picker';
+import Footer from '../Footer/Footer';
 
 class BlacklistForm extends Component {
   constructor() {
@@ -97,8 +98,9 @@ class BlacklistForm extends Component {
   render() {
     const { guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div id="main-add-form-cont">
+      <div id="add-form-cont">
+        <form id="add-form" onSubmit={this.handleFormSubmit}>
           <fieldset>
             <legend>Guest Details: </legend>
             <label> Guest Name (required):
@@ -264,8 +266,11 @@ class BlacklistForm extends Component {
           >  Submit Blacklisting </button>
           <div id="missing-data">Please enter all of the required fields</div>
         </form>
-                  
+      
       </div>
+      
+
+  </div>
     );
   }
 

@@ -9,13 +9,15 @@ class BrandDescription extends Component {
                 <div className="row m-0 p-0">
                     
                         <div className="card-body" id="content">
-                            <p>Blacklisted hotels guests cause problems and financial losses. You keep your own records of blacklisted guests but how do you know if a guest has been blacklisted at another hotel?</p>
+                            <p>Blacklisted hotel guests cause problems and financial losses. You keep your own records of blacklisted guests but how do you know if a guest has been blacklisted at another hotel?</p>
                             <p>Hotel Reservations Guide gives you the information you need to enter details of blacklisted guests and allows you to search potential guests before confirming a new reservation.</p>
+                            <hr />
+                            <br />
                         </div>
                    
-                    <div id="footer-container">
+                    {/* <div id="footer-container">
                     <Footer />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );

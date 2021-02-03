@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import Sidebar from "../../Sidebar/Sidebar"
 import API from "../../../utils/api";
 import DatePicker from 'react-date-picker';
+import Footer from '../../../components/Footer/Footer';
 import "./style.css"
 
 class Inquiry extends Component {
     constructor() {
-      super()
+        super()
         this.state = {
-          guest_name: "",
-          guest_DOB: "",
-          id_search: "",
-          search_match: []
+            guest_name: "",
+            guest_DOB: "",
+            id_search: "",
+            search_match: []
         }
     }
 
@@ -40,7 +41,6 @@ class Inquiry extends Component {
             missingDataWarning.style.display = "none";
             console.log(guest_name, guest_DOB, id_search);
             console.log(this.state.search_match)
-
             if (!guest_name && !guest_DOB) {   // Do an ID only search
                 console.log("do id search")
                 API.getBlacklistResults({id_search})
@@ -69,7 +69,6 @@ class Inquiry extends Component {
                 }))
                     .catch(err => console.log(err));  
             }
-
         }
         console.log(this.state.search_match)
     };
@@ -77,76 +76,72 @@ class Inquiry extends Component {
     render() {
         const { guest_name, guest_DOB, id_search } = this.state;
         return (
-            <div className="container-fluid h-100 p-0 m-0">
+            <div className="container-fluid h-100 p-0 m-0" id="main-content">
                 <Sidebar />
-                    <div className="content">                    
-                        <form onSubmit={this.handleFormSubmit}>
-                            <fieldset>
-                                <legend>Search by Guest name and date of birth: </legend>
-                                <label> Guest Name:
-                                    <input
-                                        onChange={this.handleInputChange}
-                                        name="guest_name"
-                                        value={guest_name}
-                                    />
-                                </label>
-                                <label>Date of Birth:
-                                    <DatePicker
-                                        calendarAriaLabel="Toggle calendar"
-                                        clearAriaLabel="Clear value"
-                                        dayAriaLabel="Day"
-                                        monthAriaLabel="Month"
-                                        nativeInputAriaLabel="Date"
-                                        onChange={this.handleDOB}
-                                        value={guest_DOB}
-                                        yearAriaLabel="Year"                            
-                                    />
-                                </label>
-                                <br />
-                                <label>OR Search by ID number:
-                                    <input
-                                        onChange={this.handleInputChange}
-                                        name="id_search"
-                                        value={id_search}
-                                    />
-                                </label>
-                                <br />                     
-                            </fieldset>             
+                <div className="content">                    
+                    <form onSubmit={this.handleFormSubmit}>
+                        <fieldset>
+                            <legend>Search by Guest name and date of birth: </legend>
+                            <label> Guest Name:
+                                <input
+                                    onChange={this.handleInputChange}
+                                    name="guest_name"
+                                    value={guest_name}
+                                />
+                            </label>
+                            <label>Date of Birth:
+                                <DatePicker
+                                    calendarAriaLabel="Toggle calendar"
+                                    clearAriaLabel="Clear value"
+                                    dayAriaLabel="Day"
+                                    monthAriaLabel="Month"
+                                    nativeInputAriaLabel="Date"
+                                    onChange={this.handleDOB}
+                                    value={guest_DOB}
+                                    yearAriaLabel="Year"                            
+                                />
+                            </label>
+                            <br />
+                            <label>OR Search by ID number:
+                                <input
+                                    onChange={this.handleInputChange}
+                                    name="id_search"
+                                    value={id_search}
+                                />
+                            </label>
+                            <br />                     
+                        </fieldset>             
           
-                            <button type="submit"
-                            // disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
+                        <button type="submit"
+                        // disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
                             > Search 
-                            </button>
-                            <div id="missing-data">Please enter guest name and date of birth OR ID number.</div>
-                        </form>
-                    
-              
-                {(this.state.search_match.length) > 0 ?
-                  
-                 <div className="dashboardCard">
-                        {this.state.search_match.map(item => (            
-                            <div className="dashboardCard card cardBackground" key={item._id}>
-                                <div className="card-body">
-                                    <h4>Added By: {item.hotel_name}</h4><span>At: {new Date(item.entry_date).toLocaleDateString("en-AU")}</span>
-                                    <br />
-                                    <p >Guest Name: {item.guest_name}</p><span>Date of Birth: {new Date(item.guest_DOB).toLocaleDateString("en-AU")}</span>
-                                    {/* {guest_DOB = new Date(item.guest_DOB).toLocaleDateString("en-US")} */}
-                                    <p >Address: {item.guest_st_address}, </p><span>{item.guest_city}</span>
-                                    <p >{item.guest_country}</p>
-                                    <p>Phone: {item.guest_phone}</p>
-                                    <p>ID number: {item.guest_ID_num}</p><span>Type: {item.guest_ID_type}</span>
-                                    <p>Payment Method: {item.pay_method}</p>
-                                </div>
-                            </div>           
-                        ))}
-                </div> 
-
-                : <div></div>
-
-                }
-
+                        </button>
+                        <div id="missing-data">Please enter guest name and date of birth OR ID number.</div>
+                    </form>
+                                  
+                    {(this.state.search_match.length) > 0 ?  
+                        <div className="dashboardCard">
+                            {this.state.search_match.map(item => (            
+                                <div className="dashboardCard card cardBackground" key={item._id}>
+                                    <div className="card-body">
+                                        <h4>Added By: {item.hotel_name}</h4><span>At: {new Date(item.entry_date).toLocaleDateString("en-AU")}</span>
+                                        <br />
+                                        <p >Guest Name: {item.guest_name}</p><span>Date of Birth: {new Date(item.guest_DOB).toLocaleDateString("en-AU")}</span>
+                                        {/* {guest_DOB = new Date(item.guest_DOB).toLocaleDateString("en-US")} */}
+                                        <p >Address: {item.guest_st_address}, </p><span>{item.guest_city}</span>
+                                        <p >{item.guest_country}</p>
+                                        <p>Phone: {item.guest_phone}</p>
+                                        <p>ID number: {item.guest_ID_num}</p><span>Type: {item.guest_ID_type}</span>
+                                        <p>Payment Method: {item.pay_method}</p>
+                                    </div>
+                                </div>           
+                            ))}
+                        </div> 
+                    : <div></div>}
                 </div>
-                
+                <div id="footer-cont">
+                    <Footer />
+                </div>
             </div>
         );
     } 

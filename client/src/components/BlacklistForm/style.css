@@ -1,3 +1,25 @@
 #ch-details, #missing-data {
     display: none;
 }
+
+/* #footer-cont {
+   
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #274472;
+    color: white;
+
+} */
+
+#add-form-cont {
+   background-color: #C3E0E5;
+}
+
+#add-form {
+    background-color: #C3E0E5;
+}
+
+#main-add-form-cont {
+    width: 100%;
+}
