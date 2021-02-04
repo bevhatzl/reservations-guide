@@ -85,7 +85,8 @@ class Inquiry extends Component {
                             <div id="heading-main-inquiry">
                                 <legend>Search by Guest name and date of birth OR by ID number: </legend>
                             </div>
-                            <label> Guest Name:
+                            <div id="search-form-inputs">
+                            <label id="guest-name-lebel"> Guest Name:
                                 <input
                                     onChange={this.handleInputChange}
                                     name="guest_name"
@@ -107,13 +108,14 @@ class Inquiry extends Component {
                             </label>
                             <br />
                         
-                            <label>Search by ID number:
+                            <label id="id-label">ID number:
                                 <input
                                     onChange={this.handleInputChange}
                                     name="id_search"
                                     value={id_search}
                                 />
                             </label>
+                            </div>
                             <br />                     
                         </fieldset>             
           

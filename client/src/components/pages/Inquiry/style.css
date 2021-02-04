@@ -50,19 +50,33 @@
 }
 
 #heading-main-inquiry {
-    margin-top: 20px;
+    margin-top: 50px;
     color: black;
 }
 
 label {
     color: black;
 }
-
+/* 
 #dob-label {
     margin-left: 10px;
   
-}
+} */
 
 #search-btn {
     width: 30%;
+}
+
+#search-form-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+#guest-name-lebel {
+    padding-top: 50px;
+}
+
+#id-label {
+    padding-top: 50px;
+    padding-bottom: 40px;
 }

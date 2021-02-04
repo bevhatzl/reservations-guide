@@ -107,7 +107,25 @@ class Register extends Component {
             <div className='container' id="container">
                 <div className='row'>
                     <div className='col-md-6 mt-5 mx-auto'>
-                        <form noValidate onSubmit={this.onSubmit}>
+                        <p id="contact-text">Complete your hotel details here to request a login before you can start using the app.</p>
+                        <form action="mailto:beverleyhatzl@gmail.com"
+                            method="POST"
+                            encType="multipart/form-data"
+                            name="EmailForm"
+                            id="contact-me-form">
+                            <label className="contact-form-input">
+                                Hotel Name:
+                                <input type="text" name="hotel-name" />
+                            </label>
+                            <label className="contact-form-input">
+                                Email:
+                                <input type="email" name="email" />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+
+                        {/* Register removed so that only approved hotels can sign-up and use the app */}
+                        {/* <form noValidate onSubmit={this.onSubmit}>
                             <h1 className='h3 mb-3 font-weight normal'>Please Sign Up</h1>
                             <div className='form-group'>
                                 <label htmlFor='hotel_name'>Hotel Name</label>
@@ -148,7 +166,7 @@ class Register extends Component {
                             <button type='submit' className='btn btn-lg btn-primary btn-block'>
                                 Register
                             </button>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </div>

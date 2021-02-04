@@ -7,3 +7,21 @@
 h1 {
     color: white !important;
 }
+
+#contact-heading {
+    font-size: larger;
+}
+
+#contact-me-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#contact-text {
+    margin-left: 20%;
+}
+
+.contact-form-input {
+    color: white;
+}

@@ -40,7 +40,7 @@ class DashBoard extends Component {
   handleAddButton = (event) => {    
     event.preventDefault();
     const addEntryBlock = document.getElementById('add-entry-form');
-    addEntryBlock.style.display = "block";
+    addEntryBlock.style.display = "flex";
   };
 
   handleFormSubmit = (event) => {    

@@ -3,7 +3,6 @@ import API from "../../utils/api";
 import jwt_decode from 'jwt-decode';
 import "./style.css";
 import DatePicker from 'react-date-picker';
-import Footer from '../Footer/Footer';
 
 class BlacklistForm extends Component {
   constructor() {
