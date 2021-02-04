@@ -101,8 +101,9 @@ class BlacklistForm extends Component {
         <h1>Add a new blacklisted guest</h1>
       <div id="add-form-cont">
         <form id="add-form" onSubmit={this.handleFormSubmit}>
-          <fieldset>
-            <legend>Guest Details: </legend>
+          <fieldset className="fieldset-add-form">
+            <legend className="legend-form">Guest Details: </legend>
+            <div className="new-list-input-item">
             <label> Guest Name <span className="required-input">(required):</span>
               <input
                 onChange={this.handleInputChange}
@@ -110,7 +111,10 @@ class BlacklistForm extends Component {
                 value={guest_name}
               />
             </label>
-            <label>Date of Birth <span className="required-input dob-field">(required):</span>
+            </div>
+            <br />
+            <div className="new-list-input-item">
+            <label id="dob-label-input">Date of Birth <span className="required-input dob-field">(required):</span>
               <DatePicker
                 calendarAriaLabel="Toggle calendar"
                 clearAriaLabel="Clear value"
@@ -123,7 +127,9 @@ class BlacklistForm extends Component {
                 className="dob-datepicker"                           
               />
             </label>
+            </div>
             <br />
+            <div className="new-list-input-item">
             <label>ID Number <span className="required-input">(required):</span>
               <input
                 onChange={this.handleInputChange}
@@ -131,6 +137,9 @@ class BlacklistForm extends Component {
                 value={guest_ID_num}
               />
             </label>
+            </div>
+            <div className="new-list-input-item">
+              <br />
             <label className="id-type-input">ID Type <span className="required-input">(required): </span>
               <select
                 onChange={this.handleInputChange}
@@ -145,6 +154,9 @@ class BlacklistForm extends Component {
                 <option value="Other">Other</option>
               </select>
             </label>
+            </div>
+            <br />
+            <div className="new-list-input-item">
             <label>Street Address:
               <input
                 onChange={this.handleInputChange}
@@ -152,7 +164,9 @@ class BlacklistForm extends Component {
                 value={guest_st_address}
               />
             </label>
+            </div>
             <br />
+            <div className="new-list-input-item">
             <label>City:
               <input
               onChange={this.handleInputChange}
@@ -160,7 +174,9 @@ class BlacklistForm extends Component {
               value={guest_city}
               />
             </label>
+            </div>
             <br />
+            <div className="new-list-input-item">
             <label>Country:
               <input
                 onChange={this.handleInputChange}
@@ -168,6 +184,9 @@ class BlacklistForm extends Component {
                 value={guest_country}
               />
             </label>
+            </div>
+            <br />
+            <div className="new-list-input-item">
             <label>Phone Number:
               <input
                 onChange={this.handleInputChange}
@@ -175,8 +194,10 @@ class BlacklistForm extends Component {
                 value={guest_phone}
               />
             </label>
+            </div>
             <br/>
-            <label>Payment Method: 
+            <div className="new-list-input-item">
+            <label id="payment-type-label">Payment Method: 
               <select
                 onChange={this.handlePaymentInputChange}
                 name="pay_method"
@@ -189,10 +210,12 @@ class BlacklistForm extends Component {
                 <option value="Other">Other</option>
               </select>
             </label>
+            </div>
           </fieldset>
 
-          <fieldset id="ch-details">
-            <legend>Credit Cardholder Details</legend>
+          <fieldset id="ch-details" className="fieldset-add-form">
+            <legend className="legend-form">Credit Cardholder Details</legend>
+            <div className="new-list-input-item">
             <label>Cardholder Name:
               <input
                 onChange={this.handleInputChange}
@@ -200,8 +223,10 @@ class BlacklistForm extends Component {
                 value={ch_name}
               />
             </label>
+            </div>
             <br/>
-            <label>Date of Birth:<span className="dob-field"></span>
+            <div className="new-list-input-item">
+            <label id="ch-dob-label">Date of Birth:<span className="dob-field"></span>
               <DatePicker
                 calendarAriaLabel="Toggle calendar"
                 clearAriaLabel="Clear value"
@@ -214,7 +239,9 @@ class BlacklistForm extends Component {
                 className="dob-datepicker"                        
               />
             </label>
+            </div>
             <br />
+            <div className="new-list-input-item">
             <label>ID Number:
               <input
                 onChange={this.handleInputChange}
@@ -222,6 +249,9 @@ class BlacklistForm extends Component {
                 value={ch_ID_num}
               />
             </label>
+            </div>
+            <br />
+            <div className="new-list-input-item">
             <label className="id-type-input">ID Type:
               <select
                 onChange={this.handleInputChange}
@@ -236,11 +266,14 @@ class BlacklistForm extends Component {
                 <option value="Other">Other</option>
               </select>
             </label>
+            <br />
+            </div>
           </fieldset>
 
-          <fieldset>
-            <legend>Details of Blacklisting</legend>
-            <label>Reason for blacklisting:
+          <fieldset className="fieldset-add-form">
+            <legend className="legend-form">Details of Blacklisting</legend>
+            <div className="new-list-input-item">
+            <label id="reason-input-label">Reason for blacklisting:
               <select
                 onChange={this.handleInputChange}
                 name="reason"
@@ -255,7 +288,9 @@ class BlacklistForm extends Component {
                 <option value="Other">Other</option>
               </select>
             </label>
+            </div>
             <br />
+            <div className="new-list-input-item">
             <label>Description:
               <textarea rows="4" cols="40"
                 onChange={this.handleInputChange}
@@ -266,14 +301,17 @@ class BlacklistForm extends Component {
               >
               </textarea>
             </label>
+            </div>
           </fieldset>             
-          
-          <button type="submit"
-            disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
+          <div className="new-list-input-item">
+          <button type="submit" id="form-sub-btn"
+            // disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
           >  Submit Blacklisting </button>
           <div id="missing-data">Please enter all of the required fields</div>
+          <br />
+          </div>
         </form>
-      
+        <br />
       </div>
       
 
