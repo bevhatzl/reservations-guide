@@ -74,7 +74,7 @@ class BlacklistForm extends Component {
       missingDataWarning.style.display = "block";
     }
     console.log(hotel_name, guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description);
-
+    
     API.saveBlacklist({hotel_name, guest_name, guest_DOB, guest_st_address, guest_city, guest_country, guest_phone,  guest_ID_num, guest_ID_type, pay_method, ch_name, ch_DOB, ch_ID_num, ch_ID_type, reason, description})
       .then(() => this.setState({
         guest_name: "",

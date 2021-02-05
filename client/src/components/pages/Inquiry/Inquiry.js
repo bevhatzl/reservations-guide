@@ -145,6 +145,7 @@ class Inquiry extends Component {
                                     <th>Cardholder Name</th>
                                     <th>Date of birth</th>
                                     <th>ID number</th>
+                                    <th>Description &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -165,7 +166,7 @@ class Inquiry extends Component {
                                     <td>{item.ch_name}</td>
                                     <td>{new Date(item.ch_DOB).toLocaleDateString("en-AU")}</td>
                                     <td>{item.ch_ID_num} {item.ch_ID_type}</td>
-                                                                       
+                                    <td>{item.description}</td>                                
                                 </tr>         
                                    
                             ))}
