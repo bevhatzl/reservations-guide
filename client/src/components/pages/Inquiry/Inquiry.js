@@ -127,25 +127,55 @@ class Inquiry extends Component {
                     </form>
                                   
                     {(this.state.search_match.length) > 0 ?  
-                        <div className="dashboardCard">
-                            {this.state.search_match.map(item => (            
-                                <div className="dashboardCard card cardBackground" key={item._id}>
-                                    <div className="card-body">
-                                        <h4>Added By: {item.hotel_name}</h4><span>At: {new Date(item.entry_date).toLocaleDateString("en-AU")}</span>
-                                        <br />
-                                        <p >Guest Name: {item.guest_name}</p><span>Date of Birth: {new Date(item.guest_DOB).toLocaleDateString("en-AU")}</span>
-                                        {/* {guest_DOB = new Date(item.guest_DOB).toLocaleDateString("en-US")} */}
-                                        <p >Address: {item.guest_st_address}, </p><span>{item.guest_city}</span>
-                                        <p >{item.guest_country}</p>
-                                        <p>Phone: {item.guest_phone}</p>
-                                        <p>ID number: {item.guest_ID_num}</p><span>Type: {item.guest_ID_type}</span>
-                                        <p>Payment Method: {item.pay_method}</p>
-                                    </div>
-                                </div>           
+                    <div className="table-wrapper" tabIndex="0">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date Entered</th>
+                                    <th>Entered By</th>
+                                    <th>Guest Name</th>
+                                    <th>Date of birth</th>
+                                    <th>Id Number</th>
+                                    <th>Reason</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>Country</th>
+                                    <th>Phone</th>
+                                    <th>Payment method</th>
+                                    <th>Cardholder Name</th>
+                                    <th>Date of birth</th>
+                                    <th>ID number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {this.state.search_match.map(item => (        
+                                 
+                                <tr key={item._id} >
+                                    <td>{new Date(item.entry_date).toLocaleDateString("en-AU")}</td>
+                                    <td>{item.hotel_name}</td>
+                                    <td>{item.guest_name}</td>
+                                    <td>{new Date(item.guest_DOB).toLocaleDateString("en-AU")}</td>
+                                    <td>{item.guest_ID_num} {item.guest_ID_type}</td>
+                                    <td>{item.reason}</td>
+                                    <td>{item.guest_st_address}</td>
+                                    <td>{item.guest_city}</td>
+                                    <td>{item.guest_country}</td>
+                                    <td>{item.guest_phone}</td>
+                                    <td>{item.pay_method}</td>
+                                    <td>{item.ch_name}</td>
+                                    <td>{new Date(item.ch_DOB).toLocaleDateString("en-AU")}</td>
+                                    <td>{item.ch_ID_num} {item.ch_ID_type}</td>
+                                                                       
+                                </tr>         
+                                   
                             ))}
-                        </div> 
+                            </tbody>
+                        </table> 
+                        </div>
                     : <div id="no-results">No results found</div>}
-                </div>
+
+                    </div>
+               
                 <div id="footer-cont">
                     <Footer />
                 </div>
