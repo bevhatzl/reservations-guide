@@ -28,8 +28,8 @@
 #no-results {
     margin-top: 10px;
     display: none;
-    color: black;
-    background-color: yellow;
+    /* color: black; */
+    /* background-color: yellow; */
     width: 50%;
 }
 

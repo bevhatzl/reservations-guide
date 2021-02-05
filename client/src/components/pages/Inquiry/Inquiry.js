@@ -172,7 +172,7 @@ class Inquiry extends Component {
                             </tbody>
                         </table> 
                         </div>
-                    : <div id="no-results">No results found</div>}
+                    : <div id="no-results" className="alert alert-warning">No results found</div>}
 
                     </div>
                
