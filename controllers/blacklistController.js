@@ -11,30 +11,27 @@ module.exports = {
   },
 
   find: function(req, res) {
-    console.log(req.params)
     Blacklist
-    .find({ $or: [{guest_ID_num: req.params.id_search}, {ch_ID_num: req.params.id_search}]}) 
+    .find({ $or: [{guest_ID_num: {'$regex': req.params.id_search,$options:'i'}}, {ch_ID_num: {'$regex': req.params.id_search,$options:'i'}}]}) 
     .sort({entry_date: 'descending'})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },
 
   findNameDOB: function(req, res) {
-    console.log(req.params)
     Blacklist
-    .find({ $and: [{guest_name: req.params.guest_name}, {guest_DOB: req.params.guest_DOB}]})  
+    .find({ $and: [{guest_name: {'$regex': req.params.guest_name,$options:'i'}}, {guest_DOB: req.params.guest_DOB}]})  
     .sort({entry_date: 'descending'})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },
 
   getAllResults: function(req, res) {
-    console.log(req.params)
     Blacklist
     .find({
       $or: [
-        { $and: [{guest_name: req.params.guest_name}, {guest_DOB: req.params.guest_DOB}]},
-        { $or: [{guest_ID_num: req.params.id_search}, {ch_ID_num: req.params.id_search}]}
+        { $and: [{guest_name: {'$regex': req.params.guest_name,$options:'i'}}, {guest_DOB: req.params.guest_DOB}]},
+        { $or: [{guest_ID_num: {'$regex': req.params.id_search,$options:'i'}}, {ch_ID_num: {'$regex': req.params.id_search,$options:'i'}}]}
       ]})    
     .sort({entry_date: 'descending'})
     .then(dbModel => res.json(dbModel))
