@@ -29,6 +29,7 @@ class Login extends Component {
             }
             else {
                 console.log("Incorrect email or password");
+                document.getElementById('incorrect-div').style.display = "block";
             }
         })
     }
@@ -63,6 +64,7 @@ class Login extends Component {
                             <button type='submit' className='btn btn-lg btn-primary btn-block'>
                                 Sign in
                             </button>
+                            <div className="alert alert-warning" id="incorrect-div">Incorrect email or password</div>
                         </form>
                     </div>
                 </div>

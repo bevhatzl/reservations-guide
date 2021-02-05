@@ -154,8 +154,11 @@ class Inquiry extends Component {
                                     <td>{item.guest_country}</td>
                                     <td>{item.guest_phone}</td>
                                     <td>{item.pay_method}</td>
-                                    <td>{item.ch_name}</td>
-                                    <td>{new Date(item.ch_DOB).toLocaleDateString("en-AU")}</td>
+                                    <td>{item.ch_name}</td>  
+                                    {/* If no cardholder DOB found, render blank                                   */}
+                                    {(item.ch_DOB !== null) ?
+                                        <td>{new Date(item.ch_DOB).toLocaleDateString("en-AU")}</td>
+                                        : <td> </td>}
                                     <td>{item.ch_ID_num} {item.ch_ID_type}</td>
                                     <td>{item.description}</td>                                
                                 </tr>                                            
