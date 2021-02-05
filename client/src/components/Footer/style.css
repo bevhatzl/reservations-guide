@@ -14,11 +14,7 @@
 
 #footer-cont {
   display: flex;
-  /* min-width: 100% !important; */
   background-color: #274472;
-   /* margin: 0; */
-  /* padding: 0;  */
-  /* text-align: center;  */
   justify-content: center; 
 }
 

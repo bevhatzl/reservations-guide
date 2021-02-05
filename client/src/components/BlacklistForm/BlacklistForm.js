@@ -101,117 +101,117 @@ class BlacklistForm extends Component {
     return (
       <div id="main-add-form-cont">
         <h1>Add a new blacklisted guest</h1>
-      <div id="add-form-cont">
-        <form id="add-form" onSubmit={this.handleFormSubmit}>
-          <fieldset className="fieldset-add-form">
-            <legend className="legend-form">Guest Details: </legend>
-            <div className="new-list-input-item">
-            <label> Guest Name <span className="required-input">(required):</span>
-              <input
-                onChange={this.handleInputChange}
-                name="guest_name"
-                value={guest_name}
-              />
-            </label>
-            </div>
-            <br />
-            <div className="new-list-input-item">
-            <label id="dob-label-input">Date of Birth <span className="required-input dob-field">(required):</span>
-              <DatePicker
-                calendarAriaLabel="Toggle calendar"
-                clearAriaLabel="Clear value"
-                dayAriaLabel="Day"
-                monthAriaLabel="Month"
-                nativeInputAriaLabel="Date"
-                onChange={this.handleDOB}
-                value={guest_DOB}
-                yearAriaLabel="Year" 
-                className="dob-datepicker"                           
-              />
-            </label>
-            </div>
-            <br />
-            <div className="new-list-input-item">
-            <label>ID Number <span className="required-input">(required):</span>
-              <input
-                onChange={this.handleInputChange}
-                name="guest_ID_num"
-                value={guest_ID_num}
-              />
-            </label>
-            </div>
-            <div className="new-list-input-item">
+        <div id="add-form-cont">
+          <form id="add-form" onSubmit={this.handleFormSubmit}>
+            <fieldset className="fieldset-add-form">
+              <legend className="legend-form">Guest Details: </legend>
+              <div className="new-list-input-item">
+                <label> Guest Name <span className="required-input">(required):</span>
+                  <input
+                    onChange={this.handleInputChange}
+                    name="guest_name"
+                    value={guest_name}
+                  />
+                </label>
+              </div>
               <br />
-            <label className="id-type-input">ID Type <span className="required-input">(required): </span>
-              <select
-                onChange={this.handleInputChange}
-                name="guest_ID_type"
-                value={guest_ID_type}
-                placeholder="Select"
-              >
-                <option value="" defaultValue disabled hidden>Select one</option>
-                <option value="Driver License">Driver License</option>
-                <option value="Passport">Passport</option>
-                <option value="Proof of Age">Proof of Age</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
+              <div className="new-list-input-item">
+                <label id="dob-label-input">Date of Birth <span className="required-input dob-field">(required):</span>
+                <DatePicker
+                  calendarAriaLabel="Toggle calendar"
+                  clearAriaLabel="Clear value"
+                  dayAriaLabel="Day"
+                  monthAriaLabel="Month"
+                  nativeInputAriaLabel="Date"
+                  onChange={this.handleDOB}
+                  value={guest_DOB}
+                  yearAriaLabel="Year" 
+                  className="dob-datepicker"                           
+                />
+                </label>
+              </div>
+              <br />
+              <div className="new-list-input-item">
+                <label>ID Number <span className="required-input">(required):</span>
+                  <input
+                    onChange={this.handleInputChange}
+                    name="guest_ID_num"
+                    value={guest_ID_num}
+                  />
+                </label>
+              </div>
+              <div className="new-list-input-item">
+                <br />
+              <label className="id-type-input">ID Type <span className="required-input">(required): </span>
+                <select
+                  onChange={this.handleInputChange}
+                  name="guest_ID_type"
+                  value={guest_ID_type}
+                  placeholder="Select"
+                >
+                  <option value="" defaultValue disabled hidden>Select one</option>
+                  <option value="Driver License">Driver License</option>
+                  <option value="Passport">Passport</option>
+                  <option value="Proof of Age">Proof of Age</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
             </div>
             <br />
             <div className="new-list-input-item">
-            <label>Street Address:
-              <input
-                onChange={this.handleInputChange}
-                name="guest_st_address"
-                value={guest_st_address}
-              />
-            </label>
+              <label>Street Address:
+                <input
+                  onChange={this.handleInputChange}
+                  name="guest_st_address"
+                  value={guest_st_address}
+                />
+              </label>
             </div>
             <br />
             <div className="new-list-input-item">
-            <label>City:
-              <input
-              onChange={this.handleInputChange}
-              name="guest_city"
-              value={guest_city}
-              />
-            </label>
+              <label>City:
+                <input
+                  onChange={this.handleInputChange}
+                  name="guest_city"
+                  value={guest_city}
+                />
+              </label>
             </div>
             <br />
             <div className="new-list-input-item">
-            <label>Country:
-              <input
-                onChange={this.handleInputChange}
-                name="guest_country"
-                value={guest_country}
-              />
-            </label>
+              <label>Country:
+                <input
+                  onChange={this.handleInputChange}
+                  name="guest_country"
+                  value={guest_country}
+                />
+              </label>
             </div>
             <br />
             <div className="new-list-input-item">
-            <label>Phone Number:
-              <input
-                onChange={this.handleInputChange}
-                name="guest_phone"
-                value={guest_phone}
-              />
-            </label>
+              <label>Phone Number:
+                <input
+                  onChange={this.handleInputChange}
+                  name="guest_phone"
+                  value={guest_phone}
+                />
+              </label>
             </div>
             <br/>
             <div className="new-list-input-item">
-            <label id="payment-type-label">Payment Method: 
-              <select
-                onChange={this.handlePaymentInputChange}
-                name="pay_method"
-                value={pay_method}
-                placeholder="Select"
-              >
-                <option value="" defaultValue disabled hidden>Select one</option>
-                <option value="Credit Card">Credit Card</option>
-                <option value="Cash">Cash</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
+              <label id="payment-type-label">Payment Method: 
+                <select
+                  onChange={this.handlePaymentInputChange}
+                  name="pay_method"
+                  value={pay_method}
+                  placeholder="Select"
+                >
+                  <option value="" defaultValue disabled hidden>Select one</option>
+                  <option value="Credit Card">Credit Card</option>
+                  <option value="Cash">Cash</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
             </div>
           </fieldset>
 
@@ -307,7 +307,6 @@ class BlacklistForm extends Component {
           </fieldset>             
           <div className="new-list-input-item">
           <button type="submit" id="form-sub-btn"
-            // disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
           >  Submit Blacklisting </button>
           <div className="alert alert-warning" id="missing-data">Please enter all of the required fields</div>
           <br />
@@ -315,8 +314,6 @@ class BlacklistForm extends Component {
         </form>
         <br />
       </div>
-      
-
   </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar/Navbar";
 import Landing from "./components/pages/Landing/Landing";
 import Register from "./components/Register/register";
@@ -9,7 +8,6 @@ import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Inquiry from "./components/pages/Inquiry/Inquiry";
 import howTo from "./components/pages/howTo/howTo";
 import usefulInfo from "./components/pages/usefulInfo/usefulInfo";
-// import Profile from "./components/Profile/profile";
 import Addlisting from "./components/pages/Addlisting/Addlisting";
 
 import "./App.css";
@@ -28,20 +26,15 @@ class App extends Component {
                         <div className='container-fluid m-0 p-0'>
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
-                            {/* <Route exact path="/profile" component={Profile} /> */}
                             <Route exact path="/dashboard" component={Auth(Dashboard)} />
                             <Route exact path="/addlisting" component={Addlisting} />
                             <Route exact path="/inquiry" component={Inquiry} />
                             <Route exact path="/startUp" component={StartUp} />
                             <Route exact path="/howTo" component={howTo} />
-                            <Route exact path="/usefulInfo" component={usefulInfo} />
-                            
-                        </div>       
-                                      
-                    </div>
-                    
-                </Router>
-                
+                            <Route exact path="/usefulInfo" component={usefulInfo} />                            
+                        </div>                                             
+                    </div>                   
+                </Router>                
         );
     }
 }

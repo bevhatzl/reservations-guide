@@ -28,18 +28,13 @@ class Inquiry extends Component {
     // When the form is submitted, use the API.getBlacklistResults method to get the results
     handleFormSubmit = (event) => {    
         event.preventDefault();
-        console.log(this.state.search_match)
         const { guest_name, guest_DOB, id_search } = this.state;
         this.setState( {search_match: []} )
-        // const search_match = this.state.search_match;
-        // this.setState({search_match: [] })
         const missingDataWarning = document.getElementById('missing-data');
         if ((!guest_name && !guest_DOB) && (!id_search)) {
             missingDataWarning.style.display = "block";
         } else {
             missingDataWarning.style.display = "none";
-            console.log(guest_name, guest_DOB, id_search);
-            console.log(this.state.search_match)
             if (!guest_name && !guest_DOB) {   // Do an ID only search
                 API.getBlacklistResults({id_search})
                     .then(res => this.setState({search_match: res.data}, () => console.log(this.state.search_match)))
@@ -48,7 +43,6 @@ class Inquiry extends Component {
                 }))
                     .catch(err => console.log(err));  
             } else if (!id_search) {  // Do a name and DOB search only
-                console.log("Do a name and DOB search")
                 API.getBlacklistByNameAndDOB({guest_name, guest_DOB})
                     .then(res => this.setState({search_match: res.data}))
                     .then(() => this.setState({
@@ -71,7 +65,6 @@ class Inquiry extends Component {
                 noResultsBlock.style.display = "block";
             }
         }
-        console.log(this.state.search_match)
     };
 
     render() {
@@ -120,7 +113,6 @@ class Inquiry extends Component {
                         </fieldset>             
           
                         <button type="submit" id="search-btn"
-                        // disabled={!(this.state.guest_name) || !(this.state.guest_DOB) || !(this.state.guest_ID_num) || !(this.state.guest_ID_type)}
                             > Search 
                         </button>
                         <div id="missing-data">Please enter guest name and date of birth OR ID number.</div>
@@ -149,8 +141,7 @@ class Inquiry extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                            {this.state.search_match.map(item => (        
-                                 
+                            {this.state.search_match.map(item => (                                         
                                 <tr key={item._id} >
                                     <td>{new Date(item.entry_date).toLocaleDateString("en-AU")}</td>
                                     <td>{item.hotel_name}</td>
@@ -167,8 +158,7 @@ class Inquiry extends Component {
                                     <td>{new Date(item.ch_DOB).toLocaleDateString("en-AU")}</td>
                                     <td>{item.ch_ID_num} {item.ch_ID_type}</td>
                                     <td>{item.description}</td>                                
-                                </tr>         
-                                   
+                                </tr>                                            
                             ))}
                             </tbody>
                         </table> 
@@ -185,6 +175,5 @@ class Inquiry extends Component {
     } 
 
 }
-
 
 export default Inquiry;

@@ -8,6 +8,7 @@ class Navbar extends Component {
         localStorage.removeItem('usertoken');
         this.props.history.push('/');
     }
+    
     render() {
         const loginRegLink = (
             <ul className='navbar-nav list-group list-group-horizontal' id="top-nav">

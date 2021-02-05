@@ -1,21 +1,10 @@
 #ch-details, #missing-data {
     display: none;
-    /* margin-right: 7%; */
 }
 
 #missing-data {
     margin-right: 7%;
 }
-
-/* #footer-cont {
-   
-    display: flex;
-    width: 100%;
-    height: 50px;
-    background-color: #274472;
-    color: white;
-
-} */
 
 #add-form-cont {
    background-color: #C3E0E5;
@@ -23,8 +12,7 @@
 
 #add-form {
     background-color: #C3E0E5;
-    color: black;
-    
+    color: black; 
 }
 
 #main-add-form-cont {
@@ -65,7 +53,7 @@ select {
 }
 
 .new-list-input-item {
-display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
 }

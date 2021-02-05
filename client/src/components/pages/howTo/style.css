@@ -1,3 +1,9 @@
 #main-content-howTo {
     background-color: #C3E0E5;
 }
+
+#howToInfo {
+    flex-direction: column;
+    color: black;
+    margin-bottom: 20px;
+}

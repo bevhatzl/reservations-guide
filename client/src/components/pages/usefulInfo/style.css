@@ -1,3 +1,9 @@
 #main-content-usefulInfo {
     background-color: #C3E0E5;
 }
+
+#usefulinfo {
+    flex-direction: column;
+    color: black;
+    margin-bottom: 20px;
+}
