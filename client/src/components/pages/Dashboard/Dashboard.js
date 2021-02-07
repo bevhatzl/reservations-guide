@@ -29,7 +29,6 @@ class DashBoard extends Component {
     });
     API.getBulletins()
       .then(res => this.setState({ bulletin_list: res.data }))
-      .then(console.log(this.state.bulletin_list))
       .catch(err => console.log(err));
   }
 
@@ -92,8 +91,7 @@ class DashBoard extends Component {
             </form>
           </div>
           <div className="d-flex flex-row-reverse mr-5">
-            <DasboardNewsCard bulletins={this.state.bulletin_list} />
-            {console.log(this.state.bulletin_list)}                    
+            <DasboardNewsCard bulletins={this.state.bulletin_list} />                 
           </div>
         </div>
       </div>
