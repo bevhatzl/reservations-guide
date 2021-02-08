@@ -1,12 +1,15 @@
 # Reservations Guide
 
-This is an app to be used by hotels only. Hotels sometimes received guest which do damage or commit fraud causing a financial loss to the hotel and the hotel blacklists the guests. Different hotel chains do not communicate with each other so the guest can visit another hotel and do the same thing.
-This app can be used by hotels to add blacklisted guest details and they may also do a search to check if potential guests are blacklisted by other hotels.
+<p>This is an app to be used by hotels only. Hotels sometimes received guest which do damage or commit fraud causing a financial loss to the hotel and the hotel blacklists the guests. Different hotel chains do not communicate with each other so the guest can visit another hotel and do the same thing.
+This app can be used by hotels to add blacklisted guest details and they may also do a search to check if potential guests are blacklisted by other hotels.</p>
 
-The link to the deployed site is here: 
-New technologies used:
-react-router-hash-link to allow scroll to top of page when clicking links
-react-date-picker for the datepicker 
+<p>The link to the deployed site is here: https://glacial-woodland-70883.herokuapp.com/</p>
+
+<p>New technologies used:</p>
+<ul>
+  <li>react-router-hash-link to allow scroll to top of page when clicking links</li>
+  <li>react-date-picker for the datepicker</li>
+<ul>
 
 Sample Data
 
@@ -61,7 +64,11 @@ Guest ID number: B123123
 
 ## Screenshots
 
-![Screenshot of initial screen](./src/assets/image1.JPG)
+![Screenshot of initial screen](./client/public/image1.JPG)
+![Screenshot of after login showing the Latest Bulletins](./client/public/image2.JPG)
+![Screenshot of Add New Blacklisting screen](./client/public/image3.JPG)
+![Screenshot of Inquiry screen showing results](./client/public/image4.JPG)
+
 
 
 ## Future Development
