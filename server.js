@@ -40,10 +40,19 @@ const mongoURI = `mongodb+srv://${USERID}:${PWD}@cluster0.fqf9a.mongodb.net/rese
 // const mongoURI = "mongodb+srv://trilogy:trilogy@cluster0.u8m9s.mongodb.net/mernlogin?retryWrites=true&w=majority";
 
 // Connect to MongoDB
-mongoose.connect( MONGODB_URI || mongoURI, {
-  useNewUrlParser: true,
-  useFindAndModify: false
-})
+// mongoose.connect( MONGODB_URI || mongoURI, {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// })
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/reservations-guide',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+)
 .then(() => console.log("MongoDB successfully connected"))
 .catch(err => console.log(err));
 
