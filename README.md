@@ -11,37 +11,39 @@ This app can be used by hotels to add blacklisted guest details and they may als
   <li>react-date-picker for the datepicker</li>
 <ul>
 
-Sample Data
-
+<p>Please use the following sample user logins as the ability to register has been removed to prevent non-hoteliers from registering, posting and searching.</p>
+<br>
 User logins:
-
-Novotel Darling Harbour
-UserID: novotel@accounts.com
-Password: password123
-
-Sheraton Mirage
-UserID: sheraton@sheraton.com
-Password: hotel123
-
-Travelodge Sydney
-UserID: travelodge@accounts.com
-Password: password
-
+<br>
+<p>
+Novotel Darling Harbour<br>
+UserID: novotel@accounts.com<br>
+Password: password123<br></p>
+<p>
+Sheraton Mirage<br>
+UserID: sheraton@sheraton.com<br>
+Password: hotel123<br></p>
+<p>
+Travelodge Sydney<br>
+UserID: travelodge@accounts.com<br>
+Password: password<br></p>
+<br>
 Sample Data to search with:
-
-Guest name: Bev Hatzl
-Guest date of birth: 01 Feb 1980
-guest ID number: A12345
-cardholder ID number: 12345678
-
-Guest name: Joe Smith
-Guest date of birth: 21 May 1997
-guest ID number: A987654
-cardholder ID number: 987654
-
-Guest name: Jeremy Willis
-Guest date of birth: 20 August 1997
-Guest ID number: B123123
+<br>
+<p>
+Guest name: Bev Hatzl<br>
+Guest date of birth: 01 Feb 1980<br>
+guest ID number: A12345<br>
+cardholder ID number: 12345678<br></p>
+<p>
+Guest name: Joe Smith<br>
+Guest date of birth: 21 May 1997<br>
+guest ID number: A987654<br>
+cardholder ID number: 987654<br></p>
+<p>
+Guest name: Jeremy Willis<br>
+Guest date of birth: 20 August 1997<br>
+Guest ID number: B123123<br></p>
 
 
 # Table of Contents
