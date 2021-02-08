@@ -10,10 +10,12 @@ This app can be used by hotels to add blacklisted guest details and they may als
   <li>react-router-hash-link to allow scroll to top of page when clicking links</li>
   <li>react-date-picker for the datepicker</li>
 <ul>
+<br>
 
-<p>Please use the following sample user logins as the ability to register has been removed to prevent non-hoteliers from registering, posting and searching.</p>
+<p><em>Please use the following sample user logins as the ability to register has been removed to prevent non-hoteliers from registering, posting and searching.</em></p>
 <br>
 User logins:
+
 <br>
 <p>
 Novotel Darling Harbour<br>
@@ -29,6 +31,7 @@ UserID: travelodge@accounts.com<br>
 Password: password<br></p>
 <br>
 Sample Data to search with:
+
 <br>
 <p>
 Guest name: Bev Hatzl<br>
