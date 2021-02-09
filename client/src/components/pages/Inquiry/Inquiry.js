@@ -73,7 +73,7 @@ class Inquiry extends Component {
             <div className="container-fluid h-100 p-0 m-0" id="main-content">
                 <Sidebar />
                 <div className="content">                    
-                    <form onSubmit={this.handleFormSubmit}>
+                    <form id='inq-form' onSubmit={this.handleFormSubmit}>
                         <fieldset>
                             <div id="heading-main-inquiry">
                                 <legend>Search by Guest name and date of birth OR by ID number: </legend>

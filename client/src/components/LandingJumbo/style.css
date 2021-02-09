@@ -1,5 +1,8 @@
 .landingJumbo {
     background-color: #5885AF !important;
+    border-radius: 25px !important;
+    opacity: 0.9;
+    box-shadow: 5px 5px 5px #777777;
 }
 
 .companyName {
@@ -8,4 +11,8 @@
 
 .companySlogan {
     color:white !important;
+}
+
+#title-text-font {
+    text-shadow: 2px 2px 7px #111111;
 }

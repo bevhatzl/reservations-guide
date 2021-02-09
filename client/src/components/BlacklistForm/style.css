@@ -12,6 +12,9 @@
 
 #main-add-form-cont {
     width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px #777777;
+    margin-bottom: 20px;
 }
 
 legend {

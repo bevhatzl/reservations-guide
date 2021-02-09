@@ -3,6 +3,8 @@
     background-color: #5885AF !important;
     height: 600px;
     color: white;
+    border-radius: 25px !important;
+    box-shadow: 5px 5px 5px #777777;
 }
 
 h1 {
@@ -11,4 +13,8 @@ h1 {
 
 #incorrect-div {
     display: none;
+}
+
+#login-fm, #email-txt, #pwd-text {
+    color: white !important;
 }

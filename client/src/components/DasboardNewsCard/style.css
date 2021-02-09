@@ -11,6 +11,7 @@
 #card-bulletin {
     background-color: #5885AF !important;
     color: white;
+    box-shadow: 5px 5px 5px #777777;
 }
 
 .card-subtitle {

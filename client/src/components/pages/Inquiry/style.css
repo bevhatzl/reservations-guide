@@ -41,7 +41,7 @@
 }
 
 #main-content {
-    background-color: #C3E0E5;
+    background-color: #e6eaeb;
 }
 
 #heading-main-inquiry {
@@ -85,7 +85,6 @@ label {
     background-position: 0 0, 100%, 0 0, 100%;
     background-attachment: local, local, scroll, scroll;
     margin-top: 20px;
-    margin-right: 20px;
   }
 
   tr {
@@ -104,4 +103,9 @@ label {
     padding: 0.5em 1em;
   }
 
- 
+ #inq-form {
+     background-color: white;
+     padding-left: 10%;
+     padding-bottom: 40px;
+     box-shadow: 0 0 10px #777777;
+ }

@@ -20,7 +20,7 @@ h1 {
 }
 
 #bulletin-cont {
-    background-color: #C3E0E5;
+    background-color: #e6eaeb;
     min-height: 900px;
 }
 
@@ -49,4 +49,7 @@ textarea {
     color: white;    
 }
 
+#msg-text-area {
+    width: 367px;
+}
 

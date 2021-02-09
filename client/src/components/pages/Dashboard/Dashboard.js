@@ -70,7 +70,7 @@ class DashBoard extends Component {
           </h1>              
           <div id="add-entry-form">
             <form onSubmit={this.handleFormSubmit}>
-              <label className="label-bulletin">Title:
+              <label className="label-bulletin">Title: &nbsp; &nbsp; &nbsp; &nbsp;
                 <input
                   onChange={this.handleInputChange}
                   name="bulletin_title"
@@ -78,12 +78,13 @@ class DashBoard extends Component {
                 />
               </label>
               <br />
-              <label className="label-bulletin">Message:
+              <label className="label-bulletin">Message: 
                 <textarea rows="4" cols="40" 
                   onChange={this.handleInputChange}
                   name="message"
                   placeholder="Provide a detailed description of the event to alert other hotels."
                   value={message}
+                  id='msg-text-area'
                 >
                 </textarea>
               </label>

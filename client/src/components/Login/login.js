@@ -39,10 +39,10 @@ class Login extends Component {
             <div className='container' id="container">
                 <div className='row'>
                     <div className='col-md-6 mt-5 mx-auto'>
-                        <form noValidate onSubmit={ this.onSubmit }>
-                            <h1 className='h3 mb-3 font-weight normal'>Please Sign in</h1>
+                        <form noValidate onSubmit={ this.onSubmit } >
+                            <h1 className='h3 mb-3 font-weight normal' id='login-fm'>Please Sign in</h1>
                             <div className='form-group'>
-                                <label htmlFor='email'>Email Address</label>
+                                <label htmlFor='email' id='email-txt'>Email Address</label>
                                 <input type='email'
                                 className='form-control'
                                 name='email'
@@ -52,7 +52,7 @@ class Login extends Component {
                                 />
                             </div>
                             <div className='form-group'>
-                                <label htmlFor='password'>Password</label>
+                                <label htmlFor='password' id='pwd-text'>Password</label>
                                 <input type='password'
                                 className='form-control'
                                 name='password'

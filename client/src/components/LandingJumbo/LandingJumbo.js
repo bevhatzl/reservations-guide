@@ -9,7 +9,7 @@ class LandingJumbo extends Component {
                     <h1 className='d-flex justify-content-center companyName'>
                         <div className="sidebar-brand-icon rotate-n-15 mr-2">    
                         </div> 
-                        <div>Hotel Reservations Guide</div>
+                        <div id="title-text-font">Hotel Reservations Guide</div>
                     </h1>
                     <h3 className='text-center companySlogan'>Letting you make safe reservation choices</h3>
                 </div>

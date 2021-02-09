@@ -1,5 +1,5 @@
 #main-content-usefulInfo {
-    background-color: #C3E0E5;
+    background-color: #e6eaeb;
 }
 
 #usefulinfo {
@@ -8,6 +8,7 @@
     margin-bottom: 20px;
     background-color: white;
     padding: 5%;
+    box-shadow: 0 0 10px #777777;
 }
 
 .subheading {

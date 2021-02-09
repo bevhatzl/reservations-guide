@@ -1,5 +1,5 @@
 #main-content-howTo {
-    background-color: #C3E0E5;
+    background-color: #e6eaeb;
 }
 
 #howToInfo {
@@ -11,6 +11,7 @@
     background-color: white !important;
     padding: 5%;
     line-height: 1.9em;
+    box-shadow: 0 0 10px #777777;
 }
 
 #heading {

@@ -121,7 +121,7 @@ class Register extends Component {
                                 Email:
                                 <input type="email" name="email" />
                             </label>
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value="Submit" id='sub-reg-btn' />
                         </form>
 
                         {/* Register removed so that only approved hotels can sign-up and use the app */}
