@@ -104,7 +104,7 @@ class BlacklistForm extends Component {
               <legend className="legend-form">Guest Details: </legend>
               <div className="new-list-input-item">
                 <label> Guest Name <span className="required-input">(required):</span>
-                  <input
+                  <input 
                     onChange={this.handleInputChange}
                     name="guest_name"
                     value={guest_name}

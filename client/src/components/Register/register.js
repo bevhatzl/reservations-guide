@@ -108,21 +108,23 @@ class Register extends Component {
                 <div className='row'>
                     <div className='col-md-6 mt-5 mx-auto'>
                         <p id="contact-text">Complete your hotel details here to request a login before you can start using the app.</p>
-                        <form action="mailto:beverleyhatzl@gmail.com"
+
+                        {/* Currently working on including Nodemailer */}
+                         <form action="send"
                             method="POST"
                             encType="multipart/form-data"
                             name="EmailForm"
                             id="contact-me-form">
                             <label className="contact-form-input">
                                 Hotel Name:
-                                <input type="text" name="hotel-name" />
+                                <input type="text" name="hotel-name" required />
                             </label>
                             <label className="contact-form-input">
                                 Email:
-                                <input type="email" name="email" />
+                                <input type="email" name="email" required />
                             </label>
                             <input type="submit" value="Submit" id='sub-reg-btn' />
-                        </form>
+                        </form>        
 
                         {/* Register removed so that only approved hotels can sign-up and use the app */}
                         {/* <form noValidate onSubmit={this.onSubmit}>

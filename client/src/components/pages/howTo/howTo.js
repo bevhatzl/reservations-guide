@@ -9,7 +9,7 @@ function howTo () {
             <div className="container-fluid h-100 p-0 m-0">
                 <Sidebar />
                 <div className="content d-flex" id="howToInfo">
-                <h1 id="heading">How to Use this site</h1>
+                <p id="heading">How to Use this site</p>
                     <h2 className="sub-heading">Important Information</h2>
                         <p className="tab-text">Be aware that if you cannot locate any results from an Inquiry search you should still follow your normal process when making reservations and checking-in guests.</p>
                     <h2 className="sub-heading">Adding a new blacklisted guest</h2>

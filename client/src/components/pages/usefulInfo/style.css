@@ -4,15 +4,14 @@
 
 #usefulinfo {
     flex-direction: column;
-    color: black;
+    color: white;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: #41729F;
     padding: 5%;
     box-shadow: 0 0 10px #777777;
 }
 
 .subheading {
-    text-decoration: underline;
     font-weight: bold;
 }
 
@@ -25,4 +24,9 @@
 #list-useful-info li {
     margin-bottom: 20px;
     line-height: 1.9em;
+}
+
+#heading {
+    color: white;
+    text-align: center;
 }
