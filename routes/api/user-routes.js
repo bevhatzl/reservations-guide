@@ -5,6 +5,10 @@ const cors = require('cors');
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
+let nodemailer = require('nodemailer');
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
@@ -118,5 +122,49 @@ router.get('/api/displayusers', (req, res) => {
             res.send('error: ' + err);
         })
 })
+
+
+const transporter = nodemailer.createTransport({
+    host: "smtp.live.com", //replace with your email provider
+    port: 587,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASS,
+    },
+  });
+  
+  // verifying the connection configuration
+  transporter.verify(function(error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages!");
+    }
+  });
+  
+router.post('/access', (req, res, next) => {
+    var email = req.body.email
+    var hotelName = req.body.hotelName
+    var content = `email: ${email} \n hotelName: ${hotelName} `
+  
+    var mail = {
+      from: `reservations guide`, 
+      to: process.env.EMAIL, 
+      subject: `Username request`,
+      text: content
+    }
+  
+    transporter.sendMail(mail, (err, data) => {
+      if (err) {
+        res.json({
+          status: 'fail'
+        })
+      } else {
+        res.json({
+         status: 'success'
+        })
+      }
+    })
+  })
 
 module.exports = router;

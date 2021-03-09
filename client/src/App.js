@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Landing from "./components/pages/Landing/Landing";
 import Register from "./components/Register/register";
+import Reg from "./components/Reg/reg";
 import Login from "./components/Login/login";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Inquiry from "./components/pages/Inquiry/Inquiry";
@@ -24,6 +25,8 @@ class App extends Component {
                         <Navbar />
                         <Route exact path="/" component={Landing} />
                         <div className='container-fluid m-0 p-0'>
+                            {/* Including this as example of sign up */}
+                            {/* <Route exact path="/register" component={Reg} /> */}
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/dashboard" component={Auth(Dashboard)} />
