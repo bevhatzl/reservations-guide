@@ -125,7 +125,7 @@ router.get('/api/displayusers', (req, res) => {
 
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.live.com", //replace with your email provider
+    host: "mail.live.com", //replace with your email provider
     port: 587,
     auth: {
       user: process.env.EMAIL,
