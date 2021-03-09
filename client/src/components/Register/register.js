@@ -32,7 +32,7 @@ const Register = () => {
                     <div className='col-md-6 mt-5 mx-auto'>
                         <p id="contact-text">Complete your hotel details here to request a login before you can start using the app. Your request will be reviewed and you will be contacted with your password.</p>
 
-                        {/* Currently working on including Nodemailer */}
+                        {/* Form for Nodemailer */}
                          <form action="send"
                             method="POST"
                             encType="multipart/form-data"

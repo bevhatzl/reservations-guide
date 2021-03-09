@@ -125,7 +125,7 @@ router.get('/api/displayusers', (req, res) => {
 
 
 const transporter = nodemailer.createTransport({
-    host: "mail.live.com", //replace with your email provider
+    host: "smtp.live.com", 
     port: 587,
     auth: {
       user: process.env.EMAIL,
@@ -148,7 +148,7 @@ router.post('/access', (req, res, next) => {
     var content = `email: ${email} \n hotelName: ${hotelName} `
   
     var mail = {
-      from: `reservations guide`, 
+      from: process.env.EMAIL, 
       to: process.env.EMAIL, 
       subject: `Username request`,
       text: content
